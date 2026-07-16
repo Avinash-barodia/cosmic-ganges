@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing Services | Cosmic Ganges</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Component Placeholder: Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- SECTION 1: HERO -->
+    <section class="services-hero">
+        <canvas id="particleCanvas" style="position: absolute; top:0; left:0; width: 100%; height: 100%; z-index:0;"></canvas>
+        <div class="stars-bg"></div>
+        <div class="container hero-split-container">
+            <div class="hero-text-content animate-on-scroll">
+                <span class="label-small">HEALING • CLARITY • TRANSFORMATION</span>
+                <h1 class="hero-title">Explore the Healing Path That's Right for You</h1>
+                <p class="hero-subtitle-elegant">
+                    Every healing journey is unique. Whether you're seeking clarity, emotional healing, spiritual guidance, or deeper self-understanding, each service is designed to help you reconnect with your inner wisdom.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-glow-large">Book Discovery Call</button>
+                    <button class="btn btn-outline-gold" onclick="document.getElementById('services-grid').scrollIntoView({behavior: 'smooth'})">Explore Services</button>
+                </div>
+            </div>
+            <div class="hero-illustration-col animate-on-scroll delay-200">
+                <div class="cosmic-portal-illustration">
+                    <!-- Golden cosmic portal / Lotus -->
+                    <svg viewBox="0 0 200 200" fill="none" class="portal-svg">
+                        <circle cx="100" cy="100" r="90" stroke="var(--color-accent)" stroke-width="0.5" stroke-dasharray="2 4"/>
+                        <circle cx="100" cy="100" r="70" stroke="var(--color-accent)" stroke-width="1" opacity="0.6"/>
+                        <!-- Lotus Base -->
+                        <path d="M100 150 Q130 150 150 120 Q100 130 100 160 Q100 130 50 120 Q70 150 100 150" fill="var(--color-accent)" opacity="0.4"/>
+                        <path d="M100 140 Q120 120 130 90 Q100 120 100 150 Q100 120 70 90 Q80 120 100 140" fill="var(--color-accent)" opacity="0.6"/>
+                        <!-- Meditation Silhouette -->
+                        <circle cx="100" cy="70" r="8" fill="var(--color-light)"/>
+                        <path d="M100 80 Q115 80 120 105 L125 125 L75 125 L80 105 Q85 80 100 80" fill="var(--color-light)" opacity="0.8"/>
+                        <!-- Glow -->
+                        <circle cx="100" cy="100" r="40" fill="var(--color-accent)" filter="blur(20px)" opacity="0.2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: INTRODUCTION -->
+    <section class="editorial-intro">
+        <div class="container editorial-container animate-on-scroll">
+            <h2 class="editorial-heading">Healing isn't one-size-fits-all.</h2>
+            <p class="editorial-paragraph">
+                Each service supports different stages of your journey. Choosing the right healing path depends on your current needs, emotional state, and spiritual goals. Explore our offerings to find the experience that resonates with your soul.
+            </p>
+            <div class="elegant-divider"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES GRID -->
+    <section id="services-grid" class="luxury-services-section">
+        <div class="container luxury-services-container">
+            
+            <!-- Service 1: Past Life Regression -->
+            <div class="luxury-service-row animate-on-scroll">
+                <div class="service-image-container">
+                    <div class="illustration-box">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="30" y="20" width="40" height="70" rx="20" stroke="var(--color-accent)" stroke-width="1.5"/>
+                            <circle cx="50" cy="55" r="15" fill="var(--color-light)" opacity="0.1"/>
+                            <path d="M45 80 L50 65 L55 80" stroke="var(--color-light)" stroke-width="1.5"/>
+                            <circle cx="50" cy="55" r="5" fill="var(--color-accent)" filter="blur(2px)"/>
+                        </svg>
+                        <div class="glow-bg"></div>
+                    </div>
+                </div>
+                <div class="service-content-container">
+                    <span class="label-small">Deep Discovery</span>
+                    <h2 class="service-title">Past Life Regression</h2>
+                    <p class="service-hook">Understand what your soul remembers.</p>
+                    <p class="service-description">Explore recurring patterns, unexplained fears, emotional blocks, and karmic connections that may originate beyond this lifetime. A deeply immersive experience into the subconscious.</p>
+                    
+                    <h4 class="benefits-title">Key Benefits</h4>
+                    <ul class="benefits-list">
+                        <li><span>✧</span> Recurring patterns</li>
+                        <li><span>✧</span> Emotional blocks</li>
+                        <li><span>✧</span> Karmic relationships</li>
+                        <li><span>✧</span> Deep self-awareness</li>
+                    </ul>
+                    <div class="service-meta">Duration: 90 - 120 Minutes</div>
+                    <div class="service-actions">
+                        <button class="btn btn-outline-gold">Book Session</button>
+                        <a href="past-life-regression.html" class="btn-text">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Inner Child Healing -->
+            <div class="luxury-service-row reverse animate-on-scroll">
+                <div class="service-image-container">
+                    <div class="illustration-box">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="30" fill="var(--color-accent)" filter="blur(15px)" opacity="0.3"/>
+                            <path d="M40 70 Q50 85 60 70 Q70 50 60 35 Q50 20 40 35 Q30 50 40 70" stroke="var(--color-light)" stroke-width="1"/>
+                            <circle cx="50" cy="50" r="8" fill="var(--color-light)"/>
+                        </svg>
+                        <div class="glow-bg"></div>
+                    </div>
+                </div>
+                <div class="service-content-container">
+                    <span class="label-small">Emotional Restoration</span>
+                    <h2 class="service-title">Inner Child Healing</h2>
+                    <p class="service-hook">Heal the wounds your younger self still carries.</p>
+                    <p class="service-description">Reconnect with the parts of you that seek safety, love, validation, and acceptance. This gentle modality helps rewrite early emotional programming and fosters profound self-compassion.</p>
+                    
+                    <h4 class="benefits-title">Key Benefits</h4>
+                    <ul class="benefits-list">
+                        <li><span>✧</span> Emotional healing</li>
+                        <li><span>✧</span> Self-love</li>
+                        <li><span>✧</span> Confidence</li>
+                        <li><span>✧</span> Relationship healing</li>
+                    </ul>
+                    <div class="service-meta">Duration: 60 - 90 Minutes</div>
+                    <div class="service-actions">
+                        <button class="btn btn-outline-gold">Book Session</button>
+                        <a href="inner-child-healing.html" class="btn-text">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Akashic Records -->
+            <div class="luxury-service-row animate-on-scroll">
+                <div class="service-image-container">
+                    <div class="illustration-box">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <!-- Floating Books -->
+                            <rect x="25" y="30" width="50" height="40" rx="2" stroke="var(--color-accent)" stroke-width="1" transform="rotate(-10 50 50)"/>
+                            <rect x="35" y="20" width="30" height="60" rx="2" stroke="var(--color-light)" stroke-width="1"/>
+                            <rect x="45" y="25" width="40" height="50" rx="2" stroke="var(--color-accent)" stroke-width="0.5" transform="rotate(15 50 50)" opacity="0.6"/>
+                            <circle cx="50" cy="50" r="20" fill="var(--color-accent)" filter="blur(10px)" opacity="0.2"/>
+                        </svg>
+                        <div class="glow-bg"></div>
+                    </div>
+                </div>
+                <div class="service-content-container">
+                    <span class="label-small">Soul Guidance</span>
+                    <h2 class="service-title">Akashic Records</h2>
+                    <p class="service-hook">Access wisdom beyond ordinary awareness.</p>
+                    <p class="service-description">Gain insight into your soul's journey, life purpose, and recurring lessons by accessing the energetic archive of every thought, word, and action across lifetimes.</p>
+                    
+                    <h4 class="benefits-title">Key Benefits</h4>
+                    <ul class="benefits-list">
+                        <li><span>✧</span> Life purpose</li>
+                        <li><span>✧</span> Soul guidance</li>
+                        <li><span>✧</span> Spiritual clarity</li>
+                        <li><span>✧</span> Decision making</li>
+                    </ul>
+                    <div class="service-meta">Duration: 60 Minutes</div>
+                    <div class="service-actions">
+                        <button class="btn btn-outline-gold">Book Session</button>
+                        <a href="akashic-records.html" class="btn-text">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Reiki Healing -->
+            <div class="luxury-service-row reverse animate-on-scroll">
+                <div class="service-image-container">
+                    <div class="illustration-box">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <path d="M20 60 Q50 20 80 60 Q50 90 20 60" stroke="var(--color-accent)" stroke-width="1"/>
+                            <circle cx="50" cy="60" r="12" fill="var(--color-light)" opacity="0.4"/>
+                            <path d="M50 30 L50 10 M30 50 L10 50 M70 50 L90 50" stroke="var(--color-accent)" stroke-width="1" stroke-dasharray="2 4"/>
+                            <circle cx="50" cy="60" r="30" fill="var(--color-accent)" filter="blur(15px)" opacity="0.2"/>
+                        </svg>
+                        <div class="glow-bg"></div>
+                    </div>
+                </div>
+                <div class="service-content-container">
+                    <span class="label-small">Energy Alignment</span>
+                    <h2 class="service-title">Reiki Healing</h2>
+                    <p class="service-hook">Restore balance in mind, body and spirit.</p>
+                    <p class="service-description">Release energetic blockages, reduce emotional stress, and create space for profound relaxation and physical renewal through universal life force energy.</p>
+                    
+                    <h4 class="benefits-title">Key Benefits</h4>
+                    <ul class="benefits-list">
+                        <li><span>✧</span> Stress reduction</li>
+                        <li><span>✧</span> Energy balancing</li>
+                        <li><span>✧</span> Inner peace</li>
+                        <li><span>✧</span> Relaxation</li>
+                    </ul>
+                    <div class="service-meta">Duration: 45 - 60 Minutes</div>
+                    <div class="service-actions">
+                        <button class="btn btn-outline-gold">Book Session</button>
+                        <a href="reiki-healing.html" class="btn-text">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5: Tarot Guidance -->
+            <div class="luxury-service-row animate-on-scroll">
+                <div class="service-image-container">
+                    <div class="illustration-box">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="35" y="25" width="30" height="50" rx="2" stroke="var(--color-accent)" stroke-width="1" transform="rotate(-15 50 50)"/>
+                            <rect x="40" y="20" width="30" height="50" rx="2" stroke="var(--color-light)" stroke-width="1.5" fill="var(--color-background)"/>
+                            <!-- Minimal card design -->
+                            <circle cx="55" cy="45" r="8" stroke="var(--color-accent)" stroke-width="1"/>
+                            <line x1="45" y1="45" x2="65" y2="45" stroke="var(--color-accent)"/>
+                            <line x1="55" y1="35" x2="55" y2="55" stroke="var(--color-accent)"/>
+                        </svg>
+                        <div class="glow-bg"></div>
+                    </div>
+                </div>
+                <div class="service-content-container">
+                    <span class="label-small">Clarity & Direction</span>
+                    <h2 class="service-title">Tarot Guidance</h2>
+                    <p class="service-hook">Gain clarity on your next chapter.</p>
+                    <p class="service-description">Receive intuitive guidance and fresh perspective on life's crossroads. Not fortune-telling, but a mirror reflecting your inner truths and potential pathways.</p>
+                    
+                    <h4 class="benefits-title">Key Benefits</h4>
+                    <ul class="benefits-list">
+                        <li><span>✧</span> Relationships</li>
+                        <li><span>✧</span> Career</li>
+                        <li><span>✧</span> Life direction</li>
+                        <li><span>✧</span> Confidence</li>
+                    </ul>
+                    <div class="service-meta">Duration: 45 Minutes</div>
+                    <div class="service-actions">
+                        <button class="btn btn-outline-gold">Book Session</button>
+                        <a href="tarot-guidance.html" class="btn-text">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: NOT SURE? -->
+    <section class="not-sure-section">
+        <div class="stars-bg"></div>
+        <div class="container not-sure-container animate-on-scroll">
+            <div class="circular-illustration">
+                <svg viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="45" stroke="var(--color-accent)" stroke-width="0.5" stroke-dasharray="2 4"/>
+                    <circle cx="50" cy="50" r="30" stroke="var(--color-accent)" stroke-width="1" opacity="0.5"/>
+                    <circle cx="50" cy="50" r="3" fill="var(--color-light)"/>
+                </svg>
+            </div>
+            <h2 class="section-title-light">Not sure which healing path is right for you?</h2>
+            <p class="not-sure-text">Every journey begins with a question. We'll help you discover the most aligned healing experience for your current situation.</p>
+            <div class="not-sure-actions">
+                <button class="btn btn-primary btn-glow-large">Book Discovery Call</button>
+                <button class="btn btn-outline-gold">Talk on WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PROCESS TIMELINE -->
+    <section class="process-section">
+        <div class="container process-container">
+            <span class="label-small" style="text-align: center; justify-content: center;">How It Works</span>
+            <h2 class="editorial-heading" style="text-align: center; margin-bottom: 5rem;">Your Journey With Us</h2>
+            
+            <div class="horizontal-timeline">
+                <div class="timeline-step animate-on-scroll">
+                    <div class="step-dot"></div>
+                    <h4>Step 1</h4>
+                    <h3>Book a Session</h3>
+                </div>
+                <div class="timeline-step animate-on-scroll delay-100">
+                    <div class="step-dot"></div>
+                    <h4>Step 2</h4>
+                    <h3>Initial Conversation</h3>
+                </div>
+                <div class="timeline-step animate-on-scroll delay-200">
+                    <div class="step-dot"></div>
+                    <h4>Step 3</h4>
+                    <h3>Healing Experience</h3>
+                </div>
+                <div class="timeline-step animate-on-scroll delay-300">
+                    <div class="step-dot"></div>
+                    <h4>Step 4</h4>
+                    <h3>Reflection & Guidance</h3>
+                </div>
+                <div class="timeline-step animate-on-scroll delay-400">
+                    <div class="step-dot"></div>
+                    <h4>Step 5</h4>
+                    <h3>Continued Growth</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: WHY COSMIC GANGES -->
+    <section class="why-us-section">
+        <div class="stars-bg"></div>
+        <div class="container why-us-container">
+            <h2 class="section-title-light animate-on-scroll">Why Choose Cosmic Ganges</h2>
+            
+            <div class="glass-feature-grid">
+                <div class="glass-card animate-on-scroll">
+                    <div class="glass-icon">✧</div>
+                    <h3>Spiritual Depth</h3>
+                    <p>Rooted in authentic traditions and deep esoteric understanding.</p>
+                </div>
+                <div class="glass-card animate-on-scroll delay-100">
+                    <div class="glass-icon">⌘</div>
+                    <h3>Analytical Perspective</h3>
+                    <p>Combining grounded logic with expansive intuitive insights.</p>
+                </div>
+                <div class="glass-card animate-on-scroll delay-200">
+                    <div class="glass-icon">⚝</div>
+                    <h3>Personalized Healing</h3>
+                    <p>Every session is dynamically tailored to your unique energetic blueprint.</p>
+                </div>
+                <div class="glass-card animate-on-scroll delay-300">
+                    <div class="glass-icon">☼</div>
+                    <h3>Safe Space</h3>
+                    <p>A zero-judgment sanctuary designed for radical emotional honesty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAQ -->
+    <section class="luxury-faq-section">
+        <div class="container luxury-faq-container">
+            <h2 class="editorial-heading" style="text-align: center; margin-bottom: 4rem;">Frequently Asked Questions</h2>
+            
+            <div class="luxury-accordion animate-on-scroll">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Who is this for?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anyone seeking emotional healing, clarity on recurring life patterns, or a deeper spiritual connection. Whether you're feeling stuck or simply curious about your soul's journey, you are welcome here.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can beginners join?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. No prior experience with spirituality or esoteric practices is required. Neelam creates a grounded, safe space to gently guide you through every step.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are sessions online?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, most of our sessions are conducted securely online, allowing you to experience profound healing from the comfort and safety of your own space.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long is a session?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Depending on the modality, sessions range from 45 minutes to 2 hours. Specific durations are listed under each individual service.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Which service should I choose?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you're unsure, we highly recommend booking a Discovery Call. It allows us to understand your current situation and suggest the most aligned starting point.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FINAL CTA -->
+    <section class="final-cta-section">
+        <div class="stars-bg"></div>
+        <div class="golden-rays"></div>
+        <div class="container final-cta-container animate-on-scroll">
+            <h2 class="section-title-light">Your healing journey begins with a single step.</h2>
+            <div class="final-cta-actions">
+                <button class="btn btn-primary btn-glow-large">Book Your Session</button>
+                <button class="btn btn-outline-gold">Discovery Call</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Component Placeholder: Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

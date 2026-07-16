@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Ganges | Premium Spiritual Healing</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+</head>
+<body>
+    <!-- MOBILE-ONLY: Splash Screen -->
+    <div id="mobile-splash" class="mobile-only mobile-splash-screen">
+        <div class="splash-stars"></div>
+        <div class="splash-content">
+            <svg class="splash-lotus" viewBox="0 0 100 100" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
+                <path d="M50 80 Q 20 60, 50 30 Q 80 60, 50 80 Z"/>
+                <path d="M50 80 C 10 60, 10 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
+                <path d="M50 80 C 90 60, 90 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
+            </svg>
+            <h1 class="splash-logo">Cosmic Ganges</h1>
+            <p class="splash-tagline">Spiritual Healing & Soul Transformation</p>
+        </div>
+    </div>
+
+    <!-- MOBILE-ONLY: Top Navigation -->
+    <nav class="mobile-only mobile-top-nav">
+        <a href="#hero" class="mobile-nav-brand">
+            <svg viewBox="0 0 100 100" fill="none" stroke="var(--color-accent)" stroke-width="2">
+                <path d="M50 80 Q 20 60, 50 30 Q 80 60, 50 80 Z"/>
+                <path d="M50 80 C 10 60, 10 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
+                <path d="M50 80 C 90 60, 90 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
+            </svg>
+            COSMIC GANGES
+        </a>
+        <button class="nav-hamburger" id="mobile-nav-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </nav>
+    
+    <!-- MOBILE-ONLY: Overlay Menu -->
+    <div class="mobile-only overlay-menu" id="mobile-overlay-menu">
+        <div class="menu-header">
+            <button class="close-menu" id="mobile-close-menu">✕</button>
+        </div>
+        <ul class="menu-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#seeking">What Are You Seeking</a></li>
+            <li><a href="#mobile-practices">Sacred Practices</a></li>
+            <li><a href="#meet-neelam">Meet Neelam</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+    
+    <!-- JS Particles Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- CSS Stars and subtle static particles -->
+    <div class="stars-bg"></div>
+
+    <!-- Component Placeholder: Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            
+            <!-- Left Side (45%) -->
+            <div class="hero-content">
+                <div class="animate-fade-slide">
+                    <span class="label-small">
+                        SOUL HEALING • SPIRITUAL GROWTH • TRANSFORMATION
+                    </span>
+                    <h1>Some patterns don't begin in this lifetime.</h1>
+                    <p class="subheading">Discover the hidden stories shaping your relationships, purpose, abundance and healing journey.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Book A Session</button>
+                        <button class="btn btn-secondary">Explore Healing Paths</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side (55%) -->
+            <div class="hero-visual">
+                <div class="illustration-wrapper animate-fade-slide delay-200">
+                    
+                    <!-- Sacred Mandala (Rotating) -->
+                    <svg class="sacred-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="rgba(201,168,76,0.3)" fill="none" stroke-width="0.5">
+                            <circle cx="100" cy="100" r="95" />
+                            <circle cx="100" cy="100" r="85" />
+                            <circle cx="100" cy="100" r="75" stroke-dasharray="2 4" />
+                            <path d="M100 5 L100 195 M5 100 L195 100 M33 33 L167 167 M33 167 L167 33" opacity="0.4"/>
+                            <!-- Geometric Star -->
+                            <polygon points="100,10 120,70 180,90 120,110 100,170 80,110 20,90 80,70" opacity="0.6"/>
+                            <polygon points="100,20 115,75 170,95 115,115 100,170 85,115 30,95 85,75" opacity="0.3"/>
+                        </g>
+                    </svg>
+
+                    <!-- Golden Aura Glow -->
+                    <div class="golden-aura"></div>
+
+                    <!-- Lotus Base -->
+                    <svg class="lotus-base" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="rgba(201,168,76,0.8)" fill="none" stroke-width="1">
+                            <path d="M50 45 C 30 45, 10 25, 50 5 C 90 25, 70 45, 50 45 Z"/>
+                            <path d="M50 45 C 35 45, 25 30, 50 15 C 75 30, 65 45, 50 45 Z"/>
+                            <path d="M50 45 C 42 45, 38 35, 50 25 C 62 35, 58 45, 50 45 Z"/>
+                        </g>
+                    </svg>
+
+                    <!-- Silhouette (Breathing Animation) -->
+                    <div class="meditation-silhouette">
+                        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="silhouetteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.9" />
+                                    <stop offset="40%" stop-color="#C9A84C" stop-opacity="0.4" />
+                                    <stop offset="100%" stop-color="#1A6B7F" stop-opacity="0.1" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <!-- Elegant Abstract Silhouette Paths -->
+                            <g fill="url(#silhouetteGrad)" filter="url(#glow)">
+                                <!-- Head -->
+                                <circle cx="50" cy="20" r="12" />
+                                <!-- Shoulders / Torso -->
+                                <path d="M50 35 C 30 35, 20 60, 20 80 C 20 95, 35 110, 50 110 C 65 110, 80 95, 80 80 C 80 60, 70 35, 50 35 Z" />
+                                <!-- Legs (Crossed) -->
+                                <path d="M20 90 C 5 100, 10 115, 50 115 C 90 115, 95 100, 80 90 C 70 100, 30 100, 20 90 Z" />
+                                <!-- Arms -->
+                                <path d="M30 45 C 10 65, 10 85, 25 100 C 30 95, 25 80, 30 70 Z" />
+                                <path d="M70 45 C 90 65, 90 85, 75 100 C 70 95, 75 80, 70 70 Z" />
+                            </g>
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="container trust-bar-container">
+        <div class="trust-bar animate-fade-slide delay-400">
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <h3>600+</h3>
+                <p>Sessions Completed</p>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg>
+                <h3>19+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <h3>Worldwide</h3>
+                <p>Online Sessions</p>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <h3>Personalized</h3>
+                <p>Healing</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why You Are Here Section -->
+    <section id="why-here" class="why-here">
+        <div class="container why-here-container">
+            <h2 class="animate-on-scroll">Perhaps you've tried everything.</h2>
+            <p class="editorial-text animate-on-scroll delay-200">
+                You have read the books, you have meditated, you have spoken the affirmations. Yet, in the quiet spaces between your breaths, a familiar heaviness remains. It is an invisible thread pulling you back into ancient cycles—patterns that defy logic and resist traditional remedies. True transformation occurs not when we forcefully prune the branches, but when we gently, courageously descend into the roots of the soul.
+            </p>
+            <div class="decorative-divider animate-on-scroll delay-400">
+                <span class="line"></span>
+                <svg class="lotus-ornament" viewBox="0 0 100 50" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
+                    <path d="M50 45 C 30 45, 10 25, 50 5 C 90 25, 70 45, 50 45 Z"/>
+                    <path d="M50 45 C 35 45, 25 30, 50 15 C 75 30, 65 45, 50 45 Z"/>
+                </svg>
+                <span class="line"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Are You Seeking Section -->
+    <section id="seeking" class="seeking">
+        <div class="container seeking-container">
+            <h2 class="seeking-title animate-on-scroll">Find the path that calls to you.</h2>
+            
+            <div class="seeking-grid">
+                <!-- Card 1: Clarity -->
+                <div class="premium-card animate-on-scroll">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                        </div>
+                        <h3>Clarity</h3>
+                        <p>Untangle confusion and see your path with crystal precision.</p>
+                        <button class="btn-explore">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                    <div class="card-expanded-content">
+                        <h4>Recommended:</h4>
+                        <ul>
+                            <li>Initial Clarity Session</li>
+                            <li>Akashic Records Reading</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Healing -->
+                <div class="premium-card animate-on-scroll delay-100">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Healing</h3>
+                        <p>Release deep-seated emotional wounds in a safe, held space.</p>
+                        <button class="btn-explore">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                    <div class="card-expanded-content">
+                        <h4>Recommended:</h4>
+                        <ul>
+                            <li>Inner Child Healing</li>
+                            <li>Reiki Energy Reset</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Transformation -->
+                <div class="premium-card animate-on-scroll delay-200">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                        </div>
+                        <h3>Transformation</h3>
+                        <p>Step out of old timelines and birth your highest self.</p>
+                        <button class="btn-explore">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                    <div class="card-expanded-content">
+                        <h4>Recommended:</h4>
+                        <ul>
+                            <li>Past Life Regression</li>
+                            <li>6-Week Mentorship</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4: Purpose -->
+                <div class="premium-card animate-on-scroll delay-300">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3>Purpose</h3>
+                        <p>Align with your soul's unique blueprint and cosmic mission.</p>
+                        <button class="btn-explore">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                    <div class="card-expanded-content">
+                        <h4>Recommended:</h4>
+                        <ul>
+                            <li>Soul Blueprint Reading</li>
+                            <li>Akashic Records</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 5: Peace -->
+                <div class="premium-card animate-on-scroll delay-400">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+                        </div>
+                        <h3>Peace</h3>
+                        <p>Return to the calm center of your own infinite being.</p>
+                        <button class="btn-explore">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                    <div class="card-expanded-content">
+                        <h4>Recommended:</h4>
+                        <ul>
+                            <li>Reiki Healing</li>
+                            <li>Guided Meditations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MOBILE-ONLY: Sacred Practices Section -->
+    <section id="mobile-practices" class="mobile-only practices-section">
+        <h2 class="app-section-title text-center">Holistic healing for mind, body and soul.</h2>
+        <div class="practices-stack container">
+            <div class="practice-card">
+                <div class="practice-visual"></div>
+                <div class="practice-content">
+                    <h3>Past Life Regression</h3>
+                    <p>Journey into the vast archives of your soul to discover, process, and heal.</p>
+                    <a href="past-life-regression.html" class="app-btn-text">Learn More</a>
+                </div>
+            </div>
+            <div class="practice-card">
+                <div class="practice-visual"></div>
+                <div class="practice-content">
+                    <h3>Inner Child Healing</h3>
+                    <p>A tender, profound process of reparenting your younger self.</p>
+                    <a href="inner-child-healing.html" class="app-btn-text">Learn More</a>
+                </div>
+            </div>
+            <div class="practice-card">
+                <div class="practice-visual"></div>
+                <div class="practice-content">
+                    <h3>Akashic Records</h3>
+                    <p>Sometimes the answers aren't found by pushing harder, but looking deeper.</p>
+                    <a href="akashic-records.html" class="app-btn-text">Learn More</a>
+                </div>
+            </div>
+            <div class="practice-card">
+                <div class="practice-visual"></div>
+                <div class="practice-content">
+                    <h3>Reiki Healing</h3>
+                    <p>Restore your natural state of physical vitality and emotional clarity.</p>
+                    <a href="reiki-healing.html" class="app-btn-text">Learn More</a>
+                </div>
+            </div>
+            <div class="practice-card">
+                <div class="practice-visual"></div>
+                <div class="practice-content">
+                    <h3>Tarot Guidance</h3>
+                    <p>Reveal your highest potential timelines and current energetic path.</p>
+                    <a href="tarot-guidance.html" class="app-btn-text">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Neelam Section -->
+    <section id="meet-neelam" class="meet-neelam">
+        <!-- Subtle Sacred Geometry Background -->
+        <svg class="meet-bg-geometry" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="rgba(201,168,76,0.15)" stroke-width="1">
+                <circle cx="250" cy="250" r="200" />
+                <circle cx="250" cy="250" r="100" />
+                <path d="M250 50 L450 350 L50 350 Z" opacity="0.5"/>
+                <path d="M250 450 L50 150 L450 150 Z" opacity="0.5"/>
+            </g>
+        </svg>
+
+        <div class="container meet-grid">
+            <!-- Left Side (Portrait) -->
+            <div class="meet-portrait-wrapper animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Portrait of Neelam" class="meet-portrait">
+                <div class="portrait-glow"></div>
+            </div>
+
+            <!-- Right Side (Content) -->
+            <div class="meet-content animate-on-scroll delay-200">
+                <span class="label-small">Meet Neelam</span>
+                <h2>A unique blend of science, intuition and spiritual practice.</h2>
+                <p class="animate-on-scroll">Before becoming a healer, Neelam Samnani spent nearly two decades in the world of computer science.</p>
+                <p class="animate-on-scroll delay-100" style="margin-top: 1.5rem;">Her analytical mindset never disappeared. Instead, it became one of her greatest strengths.</p>
+                <p class="animate-on-scroll delay-200" style="margin-top: 1.5rem;">Today she combines deep spiritual training with careful observation, helping clients explore their experiences with clarity, compassion and grounded guidance.</p>
+                <a href="about.html" class="btn btn-primary animate-on-scroll delay-300" style="margin-top: 2.5rem; display: inline-block; text-decoration: none;">Read Her Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Stories Section -->
+    <section id="stories" class="stories">
+        <div class="container stories-container">
+            <h2 class="stories-title animate-on-scroll">Stories of healing and discovery.</h2>
+            
+            <div class="slider-wrapper animate-on-scroll delay-200">
+                <!-- Navigation Arrows -->
+                <button class="slider-arrow prev-arrow" aria-label="Previous story">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="slider-arrow next-arrow" aria-label="Next story">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+
+                <div class="stories-slider" id="stories-slider">
+                    
+                    <!-- Card 1: Text -->
+                    <div class="story-card">
+                        <div class="story-content">
+                            <div class="stars">★★★★★</div>
+                            <p class="quote">"I had tried traditional therapy for years without breaking my patterns. In three sessions with Neelam, we accessed memories I didn't know I carried. The shift in my nervous system was immediate and permanent."</p>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Sarah M." class="client-portrait">
+                                <div>
+                                    <span class="client-name">Sarah M.</span>
+                                    <span class="client-location">London, UK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Featured Video -->
+                    <div class="story-card featured-video">
+                        <div class="video-thumbnail-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=800&auto=format&fit=crop" alt="Video Testimonial Thumbnail" class="video-thumbnail">
+                            <button class="btn-play">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                        </div>
+                        <div class="story-content video-content">
+                            <div class="stars">★★★★★</div>
+                            <p class="quote">"A complete spiritual awakening. Watch my story."</p>
+                            <div class="client-info">
+                                <span class="client-name">David L.</span>
+                                <span class="client-location">New York, USA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Text -->
+                    <div class="story-card">
+                        <div class="story-content">
+                            <div class="stars">★★★★★</div>
+                            <p class="quote">"The Akashic Records reading brought so much clarity to my career crossroads. It wasn't just fortune-telling; it was deep, resonant validation of what my soul already knew. I left feeling empowered and completely aligned."</p>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" alt="Elena R." class="client-portrait">
+                                <div>
+                                    <span class="client-name">Elena R.</span>
+                                    <span class="client-location">Madrid, Spain</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Text -->
+                    <div class="story-card">
+                        <div class="story-content">
+                            <div class="stars">★★★★★</div>
+                            <p class="quote">"Reiki with Neelam is unlike anything else. I arrived with severe anxiety and physical tension. By the end of our hour, I felt like I was floating. The peace stayed with me for weeks."</p>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Jessica T." class="client-portrait">
+                                <div>
+                                    <span class="client-name">Jessica T.</span>
+                                    <span class="client-location">Sydney, Australia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Cosmic Ganges Section -->
+    <section id="why-us" class="why-us">
+        <div class="container why-us-container">
+            <h2 class="section-title-light animate-on-scroll">Why choose Cosmic Ganges.</h2>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Spiritual Depth</h3>
+                    <p>Rooted in ancient esoteric wisdom and profound cosmic truths, bypassing superficial remedies to heal at the soul level.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card animate-on-scroll delay-100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <h3>Analytical Perspective</h3>
+                    <p>Grounding ethereal concepts in structured, analytical frameworks ensuring your transformation is practical and sustainable.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card animate-on-scroll delay-200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3>Personalized Sessions</h3>
+                    <p>Every session is a unique, bespoke container intuitively designed to meet your specific energetic and emotional needs.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card animate-on-scroll delay-300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Safe Environment</h3>
+                    <p>A completely judgment-free sanctuary where your deepest shadows are met with absolute compassion and unwavering support.</p>
+                </div>
+            </div>
+            
+            <div class="container trust-bar-container" style="margin-top: 40px;">
+                <div class="trust-bar">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="trust-text">
+                            <strong>600+</strong>
+                            <span>Sessions Facilitated</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="trust-text">
+                            <strong>19+</strong>
+                            <span>Years Experience</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <div class="trust-text">
+                            <strong>Worldwide</strong>
+                            <span>Global Clients</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                        </div>
+                        <div class="trust-text">
+                            <strong>100%</strong>
+                            <span>Personalized Healing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container faq-container">
+            <h2 class="section-title-light animate-on-scroll" style="text-align: left;">Frequently asked questions.</h2>
+            
+            <div class="faq-accordion animate-on-scroll delay-200">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What happens during a session?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Every session begins with a conversation about your concerns, intentions, and goals. Depending on the service chosen, you will be gently guided through a healing, exploratory, or intuitive process designed to help you gain clarity, healing, and insight.</p></div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need any prior spiritual experience?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Not at all. Many clients are completely new to spiritual healing. You don't need special knowledge, beliefs, or experience - just an open mind and a willingness to explore.</p></div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are sessions available online?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Yes. Sessions are available both online and in person. Clients from around the world have experienced meaningful results through virtual sessions conducted in a safe and comfortable environment.</p></div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I know which service is right for me?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>If you're unsure, that's perfectly okay. During a brief consultation, we'll discuss your situation and recommend the healing modality that best aligns with your current needs and goals.</p></div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a session typically last?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Most sessions last between 60 to 90 minutes, depending on the healing modality and the depth of the work being explored.</p></div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can healing sessions replace therapy or medical treatment?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>No. Spiritual healing is intended to complement your personal growth and wellbeing journey. It is not a substitute for professional medical, psychological, or psychiatric care.</p></div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will one session be enough?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Every journey is unique. Some people experience significant clarity after a single session, while others benefit from ongoing healing work. Recommendations will be based on your individual needs.</p></div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is everything discussed during the session confidential?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Absolutely. Your privacy, comfort, and trust are deeply respected. All sessions are conducted with complete confidentiality and compassion.</p></div>
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I book a session for a specific issue?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Yes. Whether you're navigating relationship challenges, emotional wounds, life transitions, recurring patterns, spiritual questions, or a desire for deeper self-understanding, sessions can be tailored to your intention.</p></div>
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How often should I book sessions?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>This varies from person to person. Some clients book a single session for clarity, while others choose ongoing support as they move through deeper layers of healing and transformation.</p></div>
+                </div>
+
+                <!-- FAQ Item 11 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I book a session?</h3>
+                        <div class="faq-toggle"><span class="line horizontal"></span><span class="line vertical"></span></div>
+                    </div>
+                    <div class="faq-answer"><p>Booking a session is simple. You can fill out the booking form on the website or connect directly via WhatsApp. Once your request is received, you'll be guided through the next steps, including selecting the right service, choosing a suitable time slot, and confirming your appointment.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MOBILE-ONLY: ABOUT PREVIEW (TIMELINE) -->
+    <section class="mobile-only app-section timeline-section">
+        <h2 class="app-section-title text-center">The Path to Cosmic Ganges</h2>
+        <div class="timeline-container glass-card container">
+            <div class="t-item">
+                <div class="t-dot"></div>
+                <h4>Computer Science</h4>
+                <p>Rooted in logic and analysis.</p>
+            </div>
+            <div class="t-item">
+                <div class="t-dot"></div>
+                <h4>Turning Point</h4>
+                <p>Questions logic couldn't answer.</p>
+            </div>
+            <div class="t-item">
+                <div class="t-dot"></div>
+                <h4>Spiritual Awakening</h4>
+                <p>A deeper exploration of the self.</p>
+            </div>
+            <div class="t-item">
+                <div class="t-dot"></div>
+                <h4>Datia</h4>
+                <p>Immersion in powerful spiritual energy.</p>
+            </div>
+            <div class="t-item">
+                <div class="t-dot"></div>
+                <h4>600+ Sessions</h4>
+                <p>Guiding deep karmic healing.</p>
+            </div>
+            <div class="t-item">
+                <div class="t-dot"></div>
+                <h4>Cosmic Ganges</h4>
+                <p>A premium sanctuary for transformation.</p>
+            </div>
+        </div>
+        <a href="about.html" class="btn btn-outline-gold" style="display: block; width: max-content; margin: 2rem auto 0; text-decoration: none;">Read Full Story</a>
+    </section>
+
+    <!-- MOBILE-ONLY: FREE RESOURCES -->
+    <section id="resources" class="mobile-only app-section resources-section">
+        <h2 class="app-section-title text-center">Free Resources</h2>
+        <div class="resources-scroll container">
+            <div class="resource-card glass-card">
+                <div class="r-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <h4>Chakra Guide</h4>
+                <button class="download-btn">↓</button>
+            </div>
+            <div class="resource-card glass-card">
+                <div class="r-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+                <h4>Moon Ritual</h4>
+                <button class="download-btn">↓</button>
+            </div>
+            <div class="resource-card glass-card">
+                <div class="r-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                <h4>Healing Journal</h4>
+                <button class="download-btn">↓</button>
+            </div>
+        </div>
+        
+        <div class="newsletter-card glass-card container mt-4">
+            <h4>Join the Cosmic Newsletter</h4>
+            <p>Insights on healing, straight to your inbox.</p>
+            <div class="app-input-group">
+                <input type="email" placeholder="Email Address">
+                <button>➔</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="cta" class="final-cta">
+        <div class="cta-stars"></div>
+        <div class="container cta-container animate-on-scroll">
+            <h2>Your soul already knows the answer.</h2>
+            <p class="cta-subtitle">Sometimes it just needs help remembering.</p>
+            <button class="btn btn-primary btn-glow-large" style="margin-top: 2.5rem;">Book Your Session</button>
+        </div>
+    </section>
+
+    <!-- Component Placeholder: Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>
