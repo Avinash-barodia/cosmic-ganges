@@ -11,57 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
-</head>
-<body>
-    <!-- MOBILE-ONLY: Splash Screen -->
-    <div id="mobile-splash" class="mobile-only mobile-splash-screen">
-        <div class="splash-stars"></div>
-        <div class="splash-content">
-            <svg class="splash-lotus" viewBox="0 0 100 100" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                <path d="M50 80 Q 20 60, 50 30 Q 80 60, 50 80 Z"/>
-                <path d="M50 80 C 10 60, 10 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
-                <path d="M50 80 C 90 60, 90 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
-            </svg>
-            <h1 class="splash-logo">Cosmic Ganges</h1>
-            <p class="splash-tagline">Spiritual Healing & Soul Transformation</p>
-        </div>
-    </div>
 
-    <!-- MOBILE-ONLY: Top Navigation -->
-    <nav class="mobile-only mobile-top-nav">
-        <a href="#hero" class="mobile-nav-brand">
-            <svg viewBox="0 0 100 100" fill="none" stroke="var(--color-accent)" stroke-width="2">
-                <path d="M50 80 Q 20 60, 50 30 Q 80 60, 50 80 Z"/>
-                <path d="M50 80 C 10 60, 10 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
-                <path d="M50 80 C 90 60, 90 30, 50 40" stroke="rgba(201,168,76,0.6)"/>
-            </svg>
-            COSMIC GANGES
-        </a>
-        <button class="nav-hamburger" id="mobile-nav-toggle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
-    </nav>
-    
-    <!-- MOBILE-ONLY: Overlay Menu -->
-    <div class="mobile-only overlay-menu" id="mobile-overlay-menu">
-        <div class="menu-header">
-            <button class="close-menu" id="mobile-close-menu">✕</button>
-        </div>
-        <ul class="menu-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#seeking">What Are You Seeking</a></li>
-            <li><a href="#mobile-practices">Sacred Practices</a></li>
-            <li><a href="#meet-neelam">Meet Neelam</a></li>
-            <li><a href="#stories">Stories</a></li>
-            <li><a href="#why-us">Why Choose Us</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
-    </div>
     
     <!-- JS Particles Canvas -->
     <canvas id="particleCanvas"></canvas>
@@ -308,52 +258,6 @@
                             <li>Guided Meditations</li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- MOBILE-ONLY: Sacred Practices Section -->
-    <section id="mobile-practices" class="mobile-only practices-section">
-        <h2 class="app-section-title text-center">Holistic healing for mind, body and soul.</h2>
-        <div class="practices-stack container">
-            <div class="practice-card">
-                <div class="practice-visual"></div>
-                <div class="practice-content">
-                    <h3>Past Life Regression</h3>
-                    <p>Journey into the vast archives of your soul to discover, process, and heal.</p>
-                    <a href="past-life-regression.html" class="app-btn-text">Learn More</a>
-                </div>
-            </div>
-            <div class="practice-card">
-                <div class="practice-visual"></div>
-                <div class="practice-content">
-                    <h3>Inner Child Healing</h3>
-                    <p>A tender, profound process of reparenting your younger self.</p>
-                    <a href="inner-child-healing.html" class="app-btn-text">Learn More</a>
-                </div>
-            </div>
-            <div class="practice-card">
-                <div class="practice-visual"></div>
-                <div class="practice-content">
-                    <h3>Akashic Records</h3>
-                    <p>Sometimes the answers aren't found by pushing harder, but looking deeper.</p>
-                    <a href="akashic-records.html" class="app-btn-text">Learn More</a>
-                </div>
-            </div>
-            <div class="practice-card">
-                <div class="practice-visual"></div>
-                <div class="practice-content">
-                    <h3>Reiki Healing</h3>
-                    <p>Restore your natural state of physical vitality and emotional clarity.</p>
-                    <a href="reiki-healing.html" class="app-btn-text">Learn More</a>
-                </div>
-            </div>
-            <div class="practice-card">
-                <div class="practice-visual"></div>
-                <div class="practice-content">
-                    <h3>Tarot Guidance</h3>
-                    <p>Reveal your highest potential timelines and current energetic path.</p>
-                    <a href="tarot-guidance.html" class="app-btn-text">Learn More</a>
                 </div>
             </div>
         </div>
@@ -662,74 +566,6 @@
                     </div>
                     <div class="faq-answer"><p>Booking a session is simple. You can fill out the booking form on the website or connect directly via WhatsApp. Once your request is received, you'll be guided through the next steps, including selecting the right service, choosing a suitable time slot, and confirming your appointment.</p></div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- MOBILE-ONLY: ABOUT PREVIEW (TIMELINE) -->
-    <section class="mobile-only app-section timeline-section">
-        <h2 class="app-section-title text-center">The Path to Cosmic Ganges</h2>
-        <div class="timeline-container glass-card container">
-            <div class="t-item">
-                <div class="t-dot"></div>
-                <h4>Computer Science</h4>
-                <p>Rooted in logic and analysis.</p>
-            </div>
-            <div class="t-item">
-                <div class="t-dot"></div>
-                <h4>Turning Point</h4>
-                <p>Questions logic couldn't answer.</p>
-            </div>
-            <div class="t-item">
-                <div class="t-dot"></div>
-                <h4>Spiritual Awakening</h4>
-                <p>A deeper exploration of the self.</p>
-            </div>
-            <div class="t-item">
-                <div class="t-dot"></div>
-                <h4>Datia</h4>
-                <p>Immersion in powerful spiritual energy.</p>
-            </div>
-            <div class="t-item">
-                <div class="t-dot"></div>
-                <h4>600+ Sessions</h4>
-                <p>Guiding deep karmic healing.</p>
-            </div>
-            <div class="t-item">
-                <div class="t-dot"></div>
-                <h4>Cosmic Ganges</h4>
-                <p>A premium sanctuary for transformation.</p>
-            </div>
-        </div>
-        <a href="about.html" class="btn btn-outline-gold" style="display: block; width: max-content; margin: 2rem auto 0; text-decoration: none;">Read Full Story</a>
-    </section>
-
-    <!-- MOBILE-ONLY: FREE RESOURCES -->
-    <section id="resources" class="mobile-only app-section resources-section">
-        <h2 class="app-section-title text-center">Free Resources</h2>
-        <div class="resources-scroll container">
-            <div class="resource-card glass-card">
-                <div class="r-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                <h4>Chakra Guide</h4>
-                <button class="download-btn">↓</button>
-            </div>
-            <div class="resource-card glass-card">
-                <div class="r-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
-                <h4>Moon Ritual</h4>
-                <button class="download-btn">↓</button>
-            </div>
-            <div class="resource-card glass-card">
-                <div class="r-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-                <h4>Healing Journal</h4>
-                <button class="download-btn">↓</button>
-            </div>
-        </div>
-        
-        <div class="newsletter-card glass-card container mt-4">
-            <h4>Join the Cosmic Newsletter</h4>
-            <p>Insights on healing, straight to your inbox.</p>
-            <div class="app-input-group">
-                <input type="email" placeholder="Email Address">
-                <button>➔</button>
             </div>
         </div>
     </section>

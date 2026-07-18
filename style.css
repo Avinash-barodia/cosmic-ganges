@@ -27,6 +27,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* =============================================
@@ -3913,7 +3914,171 @@ nav.scrolled {
   }
 }
 
-/* Hide mobile-only elements on desktop by default */
-.mobile-only {
-    display: none !important;
+/* =========================================================================
+   GLOBAL MOBILE RESPONSIVENESS (ALL PAGES)
+   ========================================================================= */
+
+/* Desktop Nav Styles (Hide mobile button) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 0.5rem;
 }
+.mobile-menu-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  /* 1. Global Typography & Spacing */
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.8rem !important; line-height: 1.3; }
+  p { font-size: 1rem; }
+  section { padding: 40px 20px !important; }
+  .container { padding: 0 15px !important; }
+
+  /* 2. Navigation */
+  .nav-links, .desktop-book-btn {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-container {
+    justify-content: space-between;
+  }
+  
+  /* Mobile Menu Dropdown Active State */
+  .nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(13, 15, 43, 0.98); /* Changed to dark background */
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    z-index: 1000;
+  }
+
+  /* 3. Hero Sections (All Pages) */
+  .hero-container, .hero-split-container {
+    flex-direction: column;
+    padding-top: 120px !important;
+    text-align: center;
+  }
+  .services-hero {
+    height: auto !important;
+    align-items: flex-start !important;
+    padding-bottom: 3rem !important;
+  }
+  .hero-content {
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+  }
+  .hero-visual {
+    width: 100% !important;
+  }
+
+  /* 4. Seeking Cards (2-column Grid) */
+  .seeking-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    padding-bottom: 2rem;
+    overflow-x: visible;
+  }
+  .seeking-grid > .premium-card {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    padding: 1.5rem 1rem !important;
+  }
+  .seeking-grid > .premium-card .card-icon {
+    width: 45px !important;
+    height: 45px !important;
+    margin-bottom: 1rem !important;
+  }
+  .seeking-grid > .premium-card .card-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .seeking-grid > .premium-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .seeking-grid > .premium-card p {
+    display: none !important; /* Hide paragraph to keep boxes truly small */
+  }
+  .seeking-grid > .premium-card .btn-explore {
+    font-size: 0.75rem !important;
+  }
+  .seeking-grid > .premium-card:last-child {
+    grid-column: span 2;
+  }
+
+  /* 5. Meet Neelam */
+  .meet-neelam .container {
+    flex-direction: column !important;
+  }
+  .meet-image-col, .meet-text-col {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .meet-image-col { margin-bottom: 2rem; }
+
+  /* 6. Transformation Stories */
+  .stories-slider {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .story-card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* 7. Why Choose Us (Features) & FAQ */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .faq-container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  .faq-header, .faq-list {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* 8. Trust Bar */
+  .trust-bar {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  /* 9. Final CTA */
+  .final-cta {
+    padding: 4rem 1.5rem !important;
+  }
+}
+

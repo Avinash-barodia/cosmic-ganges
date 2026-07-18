@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 navbarPlaceholder.innerHTML = data;
                 highlightActiveNav();
+                initMobileMenu();
             })
             .catch(error => console.error("Error loading navbar:", error));
     }
@@ -40,4 +41,22 @@ function highlightActiveNav() {
             link.classList.remove('active');
         }
     });
+}
+
+function initMobileMenu() {
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 }

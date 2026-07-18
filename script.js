@@ -185,42 +185,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // =========================================================================
-    // IOS MOBILE APP RETROFIT INTERACTIONS
-    // =========================================================================
-
-    // A. Mobile Splash Screen Fade Out
-    const mobileSplash = document.getElementById('mobile-splash');
-    if (mobileSplash) {
-        // Only run if it's visible (i.e., on mobile)
-        if (window.getComputedStyle(mobileSplash).display !== 'none') {
-            setTimeout(() => {
-                mobileSplash.style.opacity = '0';
-                setTimeout(() => {
-                    mobileSplash.style.display = 'none';
-                }, 1500);
-            }, 2500);
-        }
-    }
-
-    // B. Mobile Overlay Navigation Toggle
-    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
-    const mobileOverlayMenu = document.getElementById('mobile-overlay-menu');
-    const mobileCloseMenu = document.getElementById('mobile-close-menu');
-    
-    if (mobileNavToggle && mobileOverlayMenu && mobileCloseMenu) {
-        const toggleMobileMenu = () => {
-            mobileOverlayMenu.classList.toggle('active');
-            document.body.style.overflow = mobileOverlayMenu.classList.contains('active') ? 'hidden' : '';
-        };
-
-        mobileNavToggle.addEventListener('click', toggleMobileMenu);
-        mobileCloseMenu.addEventListener('click', toggleMobileMenu);
-        
-        // Close menu when a link is clicked
-        const menuLinks = mobileOverlayMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', toggleMobileMenu);
-        });
-    }
 });
