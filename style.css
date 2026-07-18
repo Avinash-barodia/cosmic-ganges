@@ -179,6 +179,14 @@ nav.scrolled {
   letter-spacing: 0.5px;
 }
 
+.nav-logo-img {
+  height: 80px; /* Greatly enlarged for visibility */
+  width: auto;
+  object-fit: contain;
+  clip-path: inset(0 0 35% 0); /* Cropped significantly more from below */
+  transform: translateY(10px); /* Shifts the logo DOWN slightly less to align perfectly with text */
+}
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
