@@ -4,12 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const attachNavbarScroll = () => {
         const navbar = document.getElementById('navbar');
         if (navbar) {
+            let lastScrollY = window.scrollY;
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
                 }
+                
+                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                    navbar.classList.add('nav-hidden');
+                } else {
+                    navbar.classList.remove('nav-hidden');
+                }
+                lastScrollY = window.scrollY;
             });
         }
     };
@@ -22,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
+            } else {
+                entry.target.classList.remove('is-visible');
             }
         });
     }, {

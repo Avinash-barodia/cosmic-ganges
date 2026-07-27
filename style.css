@@ -289,6 +289,8 @@ nav.scrolled {
   position: relative;
   z-index: 2;
   overflow: hidden;
+  padding-top: 120px;
+  box-sizing: border-box;
 }
 
 .hero-container {
@@ -304,7 +306,8 @@ nav.scrolled {
   width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 4vh;
   padding-right: 4rem;
 }
 
@@ -3666,7 +3669,7 @@ nav.scrolled {
 
 /* --- SECTION 6: HEALING IS / IS NOT --- */
 .healing-comparison-luxury {
-  background-color: var(--color-background);
+  background: radial-gradient( circle at 20% 15%, rgba(201,168,76,.08), transparent 35% ), radial-gradient( circle at 80% 80%, rgba(90,170,180,.05), transparent 40% ), #111433;
   padding: 0 0 8rem;
 }
 
@@ -4090,3 +4093,814 @@ nav.scrolled {
   }
 }
 
+}
+
+/* =========================================
+   FEELINGS SECTION
+   ========================================= */
+.feelings-section {
+    padding: 10rem 0 !important;
+    min-height: 80vh;
+    background: linear-gradient(to bottom, var(--color-light) 0%, var(--color-background) 15%, var(--color-background) 85%, var(--color-light) 100%) !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.feelings-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.feelings-image-col {
+    flex: 1 1 50%;
+    min-height: 400px;
+}
+
+.feelings-image-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feelings-content-col {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: radial-gradient(circle at center, rgba(15, 20, 25, 1) 0%, var(--color-background) 100%);
+}
+
+.feelings-card {
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(201,168,76, 0.2);
+    border-radius: 1.5rem;
+    padding: 3.5rem 3rem;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.feelings-header {
+    text-align: center;
+}
+
+.feelings-star {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feelings-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    color: #f0f0f0;
+}
+
+.feelings-header h2 span {
+    color: var(--color-accent);
+}
+
+.feelings-glow-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    margin: 0 auto 2.5rem auto;
+    width: 60%;
+    opacity: 0.6;
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+.feelings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.feelings-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.feelings-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.feelings-icon {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feelings-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.feelings-list p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    padding-top: 0.8rem;
+    color: #e0e0e0;
+}
+
+.feelings-footer {
+    margin-top: 2.5rem;
+    font-size: 1.05rem;
+    color: var(--color-accent);
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .feelings-image-col, .feelings-content-col {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* --- BRAND COLOR SYSTEM UPDATES --- */
+.hero, .about-hero, .service-hero, .services-hero, .page-hero {
+  background-color: var(--color-light) !important;
+  background-image: none !important;
+}
+
+.hero h1, .hero .hero-title, .hero h2,
+.about-hero h1, .about-hero .hero-title, .about-hero h2,
+.service-hero h1, .service-hero .hero-title, .service-hero h2,
+.services-hero h1, .services-hero .hero-title, .services-hero h2,
+.page-hero h1, .page-hero .hero-title, .page-hero h2 {
+  color: var(--color-primary) !important;
+}
+
+.hero p, .hero .subheading, .hero .hero-subtitle-elegant,
+.about-hero p, .about-hero .subheading, .about-hero .hero-subtitle-elegant,
+.service-hero p, .service-hero .subheading, .service-hero .hero-subtitle-elegant,
+.services-hero p, .services-hero .subheading, .services-hero .hero-subtitle-elegant,
+.page-hero p, .page-hero .subheading, .page-hero .hero-subtitle-elegant {
+  color: var(--color-background) !important;
+}
+
+nav {
+  background-color: var(--color-light) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+nav.scrolled {
+  background-color: rgba(245, 240, 232, 0.95) !important;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+.nav-links a, .logo {
+  color: var(--color-primary) !important;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent) !important;
+}
+
+.mobile-menu-btn {
+  color: var(--color-primary) !important;
+}
+
+.scroll-indicator {
+  color: var(--color-primary) !important;
+}
+
+.scroll-indicator span {
+  color: var(--color-primary) !important;
+}
+
+.scroll-indicator .mouse {
+  border-color: var(--color-primary) !important;
+}
+
+.scroll-indicator .wheel {
+  background: var(--color-accent) !important;
+}
+
+.hero .btn-secondary, .about-hero .btn-secondary, .service-hero .btn-secondary {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+.hero .btn-secondary:hover, .about-hero .btn-secondary:hover, .service-hero .btn-secondary:hover {
+  background: rgba(45, 27, 105, 0.05) !important;
+  box-shadow: none !important;
+}
+
+/* Adjust particles so they don't look weird on light bg */
+.hero #particleCanvas, .about-hero #particleCanvas, .service-hero #particleCanvas,
+.services-hero #particleCanvas, .page-hero #particleCanvas,
+.hero .stars-bg, .about-hero .stars-bg, .service-hero .stars-bg,
+.services-hero .stars-bg, .page-hero .stars-bg {
+  opacity: 0.05 !important;
+  filter: invert(1) !important;
+}
+
+
+
+/* Smart Navbar Animation */
+nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* --- BRAND COLOR SYSTEM UPDATES --- */
+.hero, .about-hero, .service-hero, .services-hero, .page-hero {
+  background-color: var(--color-light) !important;
+  background-image: none !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  padding-bottom: 6rem !important;
+  overflow: visible !important;
+}
+
+.hero h1, .hero .hero-title, .hero h2,
+.about-hero h1, .about-hero .hero-title, .about-hero h2,
+.service-hero h1, .service-hero .hero-title, .service-hero h2,
+.services-hero h1, .services-hero .hero-title, .services-hero h2,
+.page-hero h1, .page-hero .hero-title, .page-hero h2 {
+  color: var(--color-primary) !important;
+}
+
+.hero p, .hero .subheading, .hero .hero-subtitle-elegant,
+.about-hero p, .about-hero .subheading, .about-hero .hero-subtitle-elegant,
+.service-hero p, .service-hero .subheading, .service-hero .hero-subtitle-elegant,
+.services-hero p, .services-hero .subheading, .services-hero .hero-subtitle-elegant,
+.page-hero p, .page-hero .subheading, .page-hero .hero-subtitle-elegant {
+  color: var(--color-background) !important;
+}
+
+nav {
+  background-color: var(--color-light) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 1rem 0 !important;
+}
+
+nav.scrolled {
+  background-color: rgba(245, 240, 232, 0.95) !important;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+  padding: 0.8rem 0 !important;
+}
+
+.nav-links a, .logo {
+  color: var(--color-primary) !important;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent) !important;
+}
+
+.mobile-menu-btn {
+  color: var(--color-primary) !important;
+}
+
+.scroll-indicator {
+  color: var(--color-primary) !important;
+}
+
+.scroll-indicator span {
+  color: var(--color-primary) !important;
+}
+
+.scroll-indicator .mouse {
+  border-color: var(--color-primary) !important;
+}
+
+.scroll-indicator .wheel {
+  background: var(--color-accent) !important;
+}
+
+.hero .btn-secondary, .about-hero .btn-secondary, .service-hero .btn-secondary {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+.hero .btn-secondary:hover, .about-hero .btn-secondary:hover, .service-hero .btn-secondary:hover {
+  background: rgba(45, 27, 105, 0.05) !important;
+  box-shadow: none !important;
+}
+
+/* Adjust particles so they don't look weird on light bg */
+.hero #particleCanvas, .about-hero #particleCanvas, .service-hero #particleCanvas,
+.services-hero #particleCanvas, .page-hero #particleCanvas,
+.hero .stars-bg, .about-hero .stars-bg, .service-hero .stars-bg,
+.services-hero .stars-bg, .page-hero .stars-bg {
+  opacity: 0.05 !important;
+  filter: invert(1) !important;
+}
+
+/* Smart Navbar Animation */
+nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+
+/* --- PAGE LOAD ANIMATIONS --- */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure the missing animation plays on load */
+.animate-fade-slide {
+  opacity: 0;
+  animation: fadeSlideUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+.animate-fade-slide.delay-100 { animation-delay: 0.1s !important; }
+.animate-fade-slide.delay-200 { animation-delay: 0.2s !important; }
+.animate-fade-slide.delay-300 { animation-delay: 0.3s !important; }
+.animate-fade-slide.delay-400 { animation-delay: 0.4s !important; }
+
+/* Stagger hero elements individually for a nicer "appearing" effect */
+.hero-content h1, .about-hero h1 {
+  opacity: 0;
+  animation: fadeSlideUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
+}
+
+.hero-content p, .about-hero p {
+  opacity: 0;
+  animation: fadeSlideUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
+}
+
+.hero-buttons {
+  opacity: 0;
+  animation: fadeSlideUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+}
+
+
+/* --- 2ND SECTION OVERRIDES (FEELINGS) --- */
+.custom-feelings-section {
+    background: var(--color-light) !important;
+    padding: 8rem 4rem !important;
+    min-height: auto !important;
+}
+
+.custom-feelings-container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    gap: 6rem !important;
+    align-items: center !important;
+    background: transparent !important;
+}
+
+.custom-feelings-image {
+    min-height: 500px !important;
+    border-radius: 2rem !important;
+    overflow: hidden !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
+    transform: translateY(0); /* For floating effect base */
+    animation: floatingImage 6s ease-in-out infinite;
+}
+
+.custom-feelings-image img {
+    border-radius: 2rem !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.custom-feelings-content {
+    background: transparent !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+}
+
+.custom-feelings-subtitle {
+    color: var(--color-accent) !important;
+    font-family: var(--font-primary), sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 4rem !important;
+}
+
+.custom-feelings-text p {
+    color: var(--color-primary) !important;
+    font-size: 1.25rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 2rem !important;
+    font-family: var(--font-primary), sans-serif !important;
+}
+
+.custom-feelings-text p:last-child {
+    margin-bottom: 0 !important;
+}
+
+@keyframes floatingImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+    .custom-feelings-section {
+        padding: 4rem 2rem !important;
+    }
+    .custom-feelings-container {
+        gap: 3rem !important;
+        flex-direction: column !important;
+    }
+    .custom-feelings-image {
+        width: 100% !important;
+    }
+}
+
+
+/* --- FEELINGS SECTION IMAGE STYLES --- */
+.feelings-image-col {
+  padding: 3rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.feelings-image-col img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 80vh !important;
+  object-fit: contain !important;
+  border-radius: 2rem !important;
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.4) !important; /* Gold glow */
+  animation: floatImage 6s ease-in-out infinite !important;
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 992px) {
+  .feelings-image-col {
+    padding: 2rem !important;
+  }
+}
+
+
+/* --- SEAMLESS BLENDING --- */
+.hero, .about-hero, .service-hero, .services-hero, .page-hero {
+    position: relative;
+    overflow: visible !important;
+}
+
+.hero::after, .about-hero::after, .service-hero::after, .services-hero::after, .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, var(--color-light) 0%, transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Let's remove the broken gradient from feelings-section just to be safe */
+.feelings-section {
+    background: transparent !important;
+    padding: 6rem 0 !important;
+}
+
+/* For the section below feelings, which is the About section */
+.about-section {
+    position: relative;
+    overflow: visible !important;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent 0%, var(--color-light) 100%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+
+/* --- COLOR SWAP REQUEST --- */
+/* 1. Seeking Section (Cosmic Indigo) */
+.seeking {
+  background-color: var(--color-primary) !important; 
+}
+.seeking-title {
+  color: var(--color-light) !important;
+}
+.seeking .premium-card {
+  background-color: rgba(255,255,255,0.03) !important; 
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+.seeking .premium-card:hover {
+  background-color: rgba(255,255,255,0.08) !important; 
+}
+.seeking .premium-card h3 {
+  color: var(--color-light) !important;
+}
+.seeking .premium-card p {
+  color: rgba(255,255,255,0.7) !important;
+}
+.seeking .premium-card .card-explore {
+  color: var(--color-accent) !important;
+}
+
+/* Add transition to seeking section to blend it */
+.seeking {
+  position: relative;
+}
+.seeking::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--color-light) 0%, rgba(45,27,105,0) 100%);
+  pointer-events: none;
+}
+
+
+/* 2. Feelings Section (Warm Cream) */
+.feelings-section {
+  background: var(--color-light) !important;
+}
+.feelings-section::before {
+  display: none !important; 
+}
+.feelings-content-col {
+  background: none !important; 
+}
+.feelings-card {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.05) !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05) !important;
+}
+.feelings-card h2 {
+  color: var(--color-primary) !important;
+}
+.feelings-card h2 span {
+  color: var(--color-accent) !important;
+}
+.feelings-list li {
+  border-bottom-color: rgba(0,0,0,0.05) !important;
+}
+.feelings-icon {
+  background: rgba(45, 27, 105, 0.05) !important;
+  border-color: rgba(45, 27, 105, 0.1) !important;
+  color: var(--color-primary) !important;
+}
+.feelings-text {
+  color: var(--color-primary) !important;
+}
+.feelings-star {
+  stroke: var(--color-primary) !important;
+  fill: var(--color-primary) !important;
+}
+
+
+/* --- FIX FEELINGS SECTION STYLES --- */
+.feelings-section {
+  padding: 4rem 0 !important;
+}
+.feelings-list li p {
+  color: var(--color-primary) !important;
+  font-weight: 500 !important;
+  opacity: 0.9 !important;
+}
+.feelings-image-col {
+  padding: 1rem !important; /* reduce padding around image */
+}
+.feelings-card {
+  padding: 2.5rem !important; /* reduce padding inside card to short it */
+}
+
+
+/* --- COMPACT FEELINGS CARD --- */
+.feelings-content-col {
+  padding: 1rem 2rem !important;
+}
+.feelings-card {
+  padding: 1.5rem 2rem !important;
+}
+.feelings-header h2 {
+  margin-bottom: 0.5rem !important;
+  font-size: 1.8rem !important;
+}
+.feelings-glow-divider {
+  margin: 0 auto 1rem auto !important;
+}
+.feelings-list li {
+  margin-bottom: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+  gap: 1rem !important;
+}
+.feelings-icon {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+.feelings-list li p {
+  padding-top: 0.3rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+}
+.feelings-star {
+  margin-bottom: 0.5rem !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+
+/* --- HERO EDITORIAL REDESIGN OVERRIDES --- */
+.hero {
+    background-color: var(--color-light) !important;
+    background-image: none !important;
+}
+.hero h1 {
+    color: var(--color-primary) !important;
+}
+.hero .subheading {
+    color: var(--color-primary) !important;
+    opacity: 0.85 !important;
+}
+.scroll-indicator span {
+    color: var(--color-primary) !important;
+}
+.scroll-line {
+    background: linear-gradient(to bottom, var(--color-primary), transparent) !important;
+}
+
+
+/* --- NEW SECTIONS CSS --- */
+.cosmic-healing-section {
+    padding: 8rem 0;
+    background-color: var(--color-background); /* Dark indigo background to contrast the light sections */
+}
+.cosmic-healing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+}
+.healing-image-col {
+    flex: 1 1 45%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.healing-image-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.healing-content-col {
+    flex: 1 1 45%;
+}
+.healing-content-col h2 {
+    color: var(--color-light);
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+.healing-content-col h2 span {
+    color: var(--color-accent);
+}
+.healing-content-col p {
+    color: rgba(245, 240, 232, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.sacred-practices-section {
+    padding: 10rem 0;
+    background-color: var(--color-light);
+}
+.practices-header {
+    margin-bottom: 4rem;
+}
+.practices-header h2 {
+    color: var(--color-primary);
+    font-size: 3rem;
+}
+.practices-header p {
+    color: var(--color-primary);
+    opacity: 0.8;
+}
+.practices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+.practice-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+.practice-card:hover {
+    transform: translateY(-10px);
+}
+.practice-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.practice-content {
+    padding: 2rem;
+}
+.practice-content h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.practice-content p {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+.practice-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* --- EDITORIAL TESTIMONIALS & OVERRIDES --- */
+.stories {
+    background-color: var(--color-light) !important;
+    padding: 8rem 0 !important;
+}
+.stories-title {
+    color: var(--color-primary) !important;
+}
+.story-card {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    box-shadow: 0 15px 35px rgba(45, 27, 105, 0.05) !important;
+    padding: 2.5rem !important;
+}
+.story-card .quote {
+    color: var(--color-primary) !important;
+    font-size: 1.1rem !important;
+    line-height: 1.7 !important;
+    font-style: italic !important;
+    font-family: var(--font-secondary) !important;
+}
+.story-card .client-name {
+    color: var(--color-primary) !important;
+    font-weight: 600 !important;
+}
+.story-card .client-location {
+    color: var(--color-text-muted) !important;
+}
+.stars {
+    color: var(--color-accent) !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 1.5rem !important;
+}
+.slider-arrow {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    color: var(--color-primary) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
+}
+.slider-arrow:hover {
+    background: var(--color-accent) !important;
+    color: var(--color-light) !important;
+}
