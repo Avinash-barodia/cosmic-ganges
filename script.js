@@ -195,4 +195,75 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 8. Magic Door Click Animation
+    const magicDoor = document.getElementById("magic-door");
+    if (magicDoor) {
+        magicDoor.style.cursor = "pointer";
+        magicDoor.style.transition = "transform 0.3s ease, filter 0.3s ease";
+        
+        // Add hover effect via JS/CSS class
+        magicDoor.addEventListener("mouseenter", () => {
+            if(!magicDoor.classList.contains("door-zoom-in")) {
+                magicDoor.style.transform = "scale(1.02)";
+                magicDoor.style.filter = "drop-shadow(0 0 15px rgba(201, 168, 76, 0.4))";
+            }
+        });
+        magicDoor.addEventListener("mouseleave", () => {
+            if(!magicDoor.classList.contains("door-zoom-in")) {
+                magicDoor.style.transform = "scale(1)";
+                magicDoor.style.filter = "none";
+            }
+        });
+
+        magicDoor.addEventListener("click", () => {
+            // Remove hover styles so animation takes over
+            magicDoor.style.transform = "";
+            magicDoor.style.filter = "";
+            
+            magicDoor.classList.add("door-zoom-in");
+            
+            // Wait for the animation to almost finish before redirecting
+            setTimeout(() => {
+                window.location.href = "journey.html";
+            }, 900);
+        });
+    }
+
+    // 9. Premium Animation Enhancements
+    // Cinematic Text Reveal for Hero h1
+    const heroH1 = document.querySelector('.hero-content h1');
+    if (heroH1) {
+        const words = heroH1.innerText.trim().split(/\s+/);
+        heroH1.innerHTML = '';
+        words.forEach((word, index) => {
+            const container = document.createElement('span');
+            container.className = 'word-reveal-container';
+            const span = document.createElement('span');
+            span.className = 'word-reveal';
+            span.innerText = word;
+            // Delay each word slightly for a cascading reveal
+            span.style.animationDelay = `${0.3 + index * 0.12}s`;
+            container.appendChild(span);
+            heroH1.appendChild(container);
+            
+            if (index < words.length - 1) {
+                heroH1.appendChild(document.createTextNode(' '));
+            }
+        });
+    }
+
+    // SVG Drawing effect setup (Expanded for About Page)
+    const featureIcons = document.querySelectorAll('.feature-icon svg *, .sacred-geometry-bg-watermark svg *, .mv-icon svg *');
+    featureIcons.forEach(path => {
+        // Only elements that support getTotalLength (path, circle, rect, etc)
+        if (path.getTotalLength) {
+            const length = path.getTotalLength();
+            // Set dasharray and offset to the exact length of the shape
+            path.style.strokeDasharray = length;
+            path.style.strokeDashoffset = length;
+        }
+    });
+
+    // End of SVG Setup
+
 });
