@@ -1762,10 +1762,11 @@ nav.scrolled {
 
 @media (max-width: 768px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
   }
   .footer-bottom {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 1.5rem;
     text-align: center;
   }
@@ -3980,6 +3981,10 @@ nav.scrolled {
     border-bottom: 1px solid rgba(201,168,76,0.2);
     z-index: 1000;
   }
+  
+  .nav-links.active a {
+    color: var(--color-text-main) !important;
+  }
 
   /* 3. Hero Sections (All Pages) */
   .hero-container, .hero-split-container {
@@ -4821,6 +4826,12 @@ nav.nav-hidden {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .practices-grid {
+        grid-template-columns: 1fr;
+    }
 }
 .practice-card {
     background: #fff;
