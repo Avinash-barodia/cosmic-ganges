@@ -37,7 +37,6 @@
                     Guiding people toward healing, clarity, and transformation through a thoughtful blend of science, intuition, and spiritual practice.
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary btn-glow-large">Book a Session</button>
                     <a href="services.html" class="btn btn-outline-gold">Explore Healing Paths</a>
                 </div>
             </div>
@@ -68,49 +67,118 @@
     <!-- SECTION 3: MEET NEELAM (STORY) -->
     <section class="meet-story-section">
         <div class="container meet-story-container">
-            <div class="story-grid-luxury">
-                <div class="story-image-left animate-on-scroll">
-                    <div class="about-portrait-card">
-                        <img src="assets/Neelam-pic2.JPG" alt="Neelam Samnani" class="portrait-tall" style="object-fit: cover; width: 100%;">
-                        <div class="sacred-geometry-bg-watermark">
-                            <svg viewBox="0 0 100 100" fill="none">
-                                <circle cx="50" cy="50" r="45" stroke="var(--color-accent)" stroke-width="1" opacity="0.2"/>
-                                <path d="M50 5 L90 75 L10 75 Z" stroke="var(--color-accent)" stroke-width="1" opacity="0.2"/>
-                                <path d="M50 95 L10 25 L90 25 Z" stroke="var(--color-accent)" stroke-width="1" opacity="0.2"/>
-                            </svg>
-                        </div>
+            <div class="cosmic-constellation-wrapper" id="cosmic-wrapper">
+                <svg class="constellation-svg" id="constellation-svg">
+                    <path class="constellation-path" id="constellation-path"></path>
+                    <path class="constellation-path-fill" id="constellation-path-fill"></path>
+                </svg>
+
+                <div class="constellation-node center-star left-card" style="margin-top: -3rem;">
+                    <div class="star"></div>
+                    <div class="constellation-card">
+                        <h3>The Analytical Foundation</h3>
+                        <p>Before stepping into the world of spiritual healing, Neelam Samnani spent nearly two decades building a career in computer science. Her foundation was rooted in logic, analysis, and problem-solving, always seeking understanding through observation and experience.</p>
                     </div>
                 </div>
-                
-                <div class="story-content-right animate-on-scroll delay-100">
-                    <div class="story-blocks">
-                        <div class="story-block">
-                            <h3>The Analytical Foundation</h3>
-                            <p>Before stepping into the world of spiritual healing, Neelam Samnani spent nearly two decades building a career in computer science. Her foundation was rooted in logic, analysis, and problem-solving, always seeking understanding through observation and experience.</p>
-                        </div>
-                        
-                        <div class="story-block">
-                            <h3>The Unanswered Questions</h3>
-                            <p>Over time, life presented questions that could not be answered through logic alone. Questions about purpose, emotional patterns, healing, and the deeper forces shaping human experiences led her on a path of self-discovery and spiritual exploration.</p>
-                        </div>
-                        
-                        <div class="story-block">
-                            <h3>The Calling to Datia</h3>
-                            <p>This journey eventually brought her to Datia, a place known for its powerful spiritual energy and sacred traditions. What began as a personal search for answers gradually evolved into a deeper calling. Through years of study, practice, and inner work, Neelam immersed herself in healing modalities that helped her understand the emotional, energetic, and spiritual layers of life.</p>
-                        </div>
-                        
-                        <div class="story-block">
-                            <h3>Science Meets Spirituality</h3>
-                            <p>What makes her approach unique is the balance she brings between intuition and grounded awareness. Her background in technology taught her to observe carefully, listen deeply, and seek genuine understanding rather than assumptions. Today, she carries the same thoughtful approach into every healing session.</p>
-                        </div>
-                        
-                        <div class="story-block">
-                            <h3>A Sanctuary for Healing</h3>
-                            <p>Through Cosmic Ganges, Neelam guides individuals on journeys of self-discovery, healing, and transformation through Past Life Regression, Inner Child Healing, Akashic Records, Reiki, and Tarot Guidance. Over the years, she has supported hundreds of individuals navigating emotional challenges, recurring life patterns, relationship struggles, spiritual growth, and personal transformation.</p>
-                        </div>
+
+                <div class="constellation-node right-star left-card">
+                    <div class="star"></div>
+                    <div class="constellation-card">
+                        <h3>The Unanswered Questions</h3>
+                        <p>Over time, life presented questions that could not be answered through logic alone. Questions about purpose, emotional patterns, healing, and the deeper forces shaping human experiences led her on a path of self-discovery and spiritual exploration.</p>
+                    </div>
+                </div>
+
+                <div class="constellation-node left-star right-card">
+                    <div class="star"></div>
+                    <div class="constellation-card">
+                        <h3>The Calling to Datia</h3>
+                        <p>This journey eventually brought her to Datia, a place known for its powerful spiritual energy and sacred traditions. What began as a personal search for answers gradually evolved into a deeper calling. Through years of study, practice, and inner work, Neelam immersed herself in healing modalities that helped her understand the emotional, energetic, and spiritual layers of life.</p>
+                    </div>
+                </div>
+
+                <div class="constellation-node center-star right-card">
+                    <div class="star"></div>
+                    <div class="constellation-card">
+                        <h3>Science Meets Spirituality</h3>
+                        <p>What makes her approach unique is the balance she brings between intuition and grounded awareness. Her background in technology taught her to observe carefully, listen deeply, and seek genuine understanding rather than assumptions. Today, she carries the same thoughtful approach into every healing session.</p>
+                    </div>
+                </div>
+
+                <div class="constellation-node left-star right-card">
+                    <div class="star"></div>
+                    <div class="constellation-card">
+                        <h3>A Sanctuary for Healing</h3>
+                        <p>Through Cosmic Ganges, Neelam guides individuals on journeys of self-discovery, healing, and transformation through Past Life Regression, Inner Child Healing, Akashic Records, Reiki, and Tarot Guidance. Over the years, she has supported hundreds of individuals navigating emotional challenges, recurring life patterns, relationship struggles, spiritual growth, and personal transformation.</p>
                     </div>
                 </div>
             </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const wrapper = document.getElementById('cosmic-wrapper');
+                    const svg = document.getElementById('constellation-svg');
+                    const pathBg = document.getElementById('constellation-path');
+                    const pathFill = document.getElementById('constellation-path-fill');
+                    const nodes = document.querySelectorAll('.constellation-node');
+                    const stars = document.querySelectorAll('.star');
+
+                    if (!wrapper || stars.length === 0) return;
+
+                    function drawPath() {
+                        const wrapperRect = wrapper.getBoundingClientRect();
+                        let d = '';
+                        
+                        stars.forEach((star, index) => {
+                            const starRect = star.getBoundingClientRect();
+                            const x = starRect.left - wrapperRect.left + (starRect.width / 2);
+                            const y = starRect.top - wrapperRect.top + (starRect.height / 2);
+                            
+                            if (index === 0) {
+                                d += `M ${x},${y} `;
+                            } else {
+                                d += `L ${x},${y} `;
+                            }
+                        });
+                        
+                        pathBg.setAttribute('d', d);
+                        pathFill.setAttribute('d', d);
+                        
+                        // We must read the total length after setting the d attribute
+                        const pathLength = pathFill.getTotalLength();
+                        pathFill.style.strokeDasharray = pathLength;
+                        pathFill.style.strokeDashoffset = pathLength;
+                    }
+
+                    // Draw on load and window resize
+                    setTimeout(drawPath, 100); // small delay to ensure CSS has painted
+                    window.addEventListener('resize', drawPath);
+
+                    window.addEventListener('scroll', () => {
+                        const wrapperRect = wrapper.getBoundingClientRect();
+                        const windowCenter = window.innerHeight * 0.6; 
+                        
+                        let scrollPercent = (windowCenter - wrapperRect.top) / wrapperRect.height;
+                        scrollPercent = Math.max(0, Math.min(1, scrollPercent));
+                        
+                        const pathLength = pathFill.getTotalLength();
+                        const drawLength = pathLength * scrollPercent;
+                        
+                        pathFill.style.strokeDashoffset = pathLength - drawLength;
+                        
+                        nodes.forEach(node => {
+                            const nodeRect = node.getBoundingClientRect();
+                            if (nodeRect.top + (nodeRect.height / 4) < windowCenter) {
+                                node.classList.add('illuminated');
+                            } else {
+                                node.classList.remove('illuminated');
+                            }
+                        });
+                    });
+                    
+                    setTimeout(() => window.dispatchEvent(new Event('scroll')), 200);
+                });
+            </script>
         </div>
     </section>
 

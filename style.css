@@ -165,6 +165,7 @@ nav.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .logo {
@@ -177,6 +178,7 @@ nav.scrolled {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .nav-logo-img {
@@ -189,8 +191,11 @@ nav.scrolled {
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: clamp(1rem, 2.5vw, 3rem);
   list-style: none;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-links a {
@@ -203,6 +208,7 @@ nav.scrolled {
   transition: var(--transition-fast);
   position: relative;
   opacity: 0.8;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -241,6 +247,7 @@ nav.scrolled {
   transition: var(--transition-fast);
   cursor: pointer;
   border: none;
+  white-space: nowrap;
 }
 
 .btn-pill-glow {
@@ -3503,35 +3510,136 @@ nav.scrolled {
   animation: rotateSlow 60s linear infinite;
 }
 
-.story-blocks {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+/* --- COSMIC CONSTELLATION TIMELINE --- */
+.cosmic-constellation-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  min-height: 800px;
 }
 
-.story-block h3 {
+.constellation-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.constellation-path {
+  fill: none;
+  stroke: rgba(201, 168, 76, 0.15);
+  stroke-width: 2px;
+  stroke-dasharray: 6 6;
+}
+
+.constellation-path-fill {
+  fill: none;
+  stroke: rgba(201, 168, 76, 1);
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.8));
+}
+
+.constellation-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-height: 150px;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.constellation-node:last-child {
+  margin-bottom: 0;
+}
+
+.star {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.8), 0 0 0 4px rgba(201, 168, 76, 0.3);
+  z-index: 3;
+  transition: all 0.5s ease;
+  opacity: 0.5;
+  transform: translateX(-50%) scale(0.8);
+}
+
+.constellation-node.illuminated .star {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.3);
+  background: var(--color-accent);
+  box-shadow: 0 0 25px rgba(201, 168, 76, 1), 0 0 0 8px rgba(201, 168, 76, 0.4);
+}
+
+.constellation-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.constellation-node.illuminated .constellation-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.constellation-card h3 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
-  position: relative;
-  padding-left: 1.5rem;
 }
 
-.story-block h3::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  height: 2px;
-  width: 15px;
-  background: var(--color-accent);
-}
-
-.story-block p {
-  font-size: 1.15rem;
+.constellation-card p {
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: #444;
+  color: #555;
+  margin: 0;
+}
+
+/* Star positions & Card alignments */
+.center-star .star { left: 50%; }
+.left-star .star { left: 15%; }
+.right-star .star { left: 85%; }
+
+.right-card { justify-content: flex-start; }
+.left-card { justify-content: flex-end; }
+
+.center-star.right-card { padding-left: 55%; }
+.center-star.left-card { padding-right: 55%; }
+.left-star.right-card { padding-left: 20%; }
+.right-star.left-card { padding-right: 20%; }
+
+@media (max-width: 768px) {
+  .constellation-node {
+    flex-direction: column;
+    padding: 3rem 0 0 0 !important;
+    align-items: center;
+  }
+  .constellation-card {
+    width: 90%;
+    padding: 1.5rem;
+    margin: 1rem 0 0 0;
+  }
+  .center-star .star, .left-star .star, .right-star .star {
+    left: 50%;
+    top: 0;
+  }
 }
 
 /* --- SECTION 4: VERTICAL TIMELINE --- */
@@ -5077,3 +5185,6 @@ nav.nav-hidden {
     opacity: 1 !important;
     transform: translateY(0);
 }
+
+
+

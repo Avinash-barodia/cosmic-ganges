@@ -1,0 +1,106 @@
+/* Different Paths Section */
+.different-paths-section {
+    background-color: var(--color-light); /* exact same bg color as Meet Neelam */
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.paths-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.paths-intro {
+    margin-bottom: 4rem;
+}
+
+.paths-intro h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.paths-intro p {
+    font-family: var(--font-sans);
+    color: var(--color-primary);
+    opacity: 0.8;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.paths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: left;
+}
+
+.path-card {
+    background-color: #Fdfbf7; /* Slightly lighter off-white for the card background to contrast with --color-light */
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.path-color-block {
+    height: 140px;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.path-card h3 {
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.path-card p {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    min-height: 45px;
+}
+
+.path-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+}
+
+.path-card a:hover {
+    opacity: 0.8;
+}
+
+/* Make sure last row handles centering if needed, but grid usually handles it well */
+@media (max-width: 992px) {
+    .paths-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .paths-grid {
+        grid-template-columns: 1fr;
+    }
+    .paths-intro h2 {
+        font-size: 2.2rem;
+    }
+}

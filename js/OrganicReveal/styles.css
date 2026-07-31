@@ -1,0 +1,188 @@
+/* OrganicReveal/styles.css */
+:root {
+    --energy-core: #FFF9E6;
+    --energy-inner: #F7D774;
+    --energy-mid: #D4AF37;
+    --energy-outer: rgba(212, 175, 55, 0.25);
+    --energy-highlight: #FFFFFF;
+    
+    /* Animation Variables to be manipulated by GSAP */
+    --or-reveal-radius: 0;
+    --or-noise-scale: 1;
+    --or-noise-offset-x: 0px;
+    --or-noise-offset-y: 0px;
+    
+    /* Secondary Pockets */
+    --or-pocket-1-radius: 0;
+    --or-pocket-1-x: 50%;
+    --or-pocket-1-y: 50%;
+    
+    --or-pocket-2-radius: 0;
+    --or-pocket-2-x: 50%;
+    --or-pocket-2-y: 50%;
+    
+    /* Glow/Effects specific variables */
+    --or-glow-opacity: 0;
+    --or-illustration-brightness: 1;
+    --or-illustration-scale: 1;
+    
+    /* Displacement Layer Variables */
+    --or-distortion-opacity: 0;
+    --or-distortion-scale: 1.01; /* Heat haze scale */
+}
+
+.organic-reveal-container {
+    position: relative;
+    width: calc(100% - 2rem);
+    min-height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff; /* Base background for the content */
+    margin: 4rem auto;
+    max-width: 900px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+    .organic-reveal-container {
+        width: 100%;
+        border-radius: 0;
+        margin: 0 auto;
+        min-height: auto;
+    }
+}
+
+.or-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+/* Layer 1: Hidden Content (Relative to dictate container height) */
+.or-content-layer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    height: auto;
+    pointer-events: auto;
+}
+
+.or-content-layer .feelings-card {
+    max-width: 650px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .or-content-layer {
+        padding: 3rem 1rem;
+    }
+    .or-content-layer .feelings-card {
+        padding: 1.5rem 1rem !important;
+    }
+    .or-content-layer .feelings-list li {
+        gap: 1rem !important;
+    }
+    .or-content-layer .feelings-icon {
+        width: 2.8rem !important;
+        height: 2.8rem !important;
+    }
+    .or-content-layer .feelings-icon svg {
+        width: 1.3rem !important;
+        height: 1.3rem !important;
+    }
+    .or-content-layer .feelings-list p {
+        padding-top: 0.5rem !important;
+        font-size: 0.95rem !important;
+    }
+    .or-content-layer .feelings-header h2 {
+        font-size: 1.6rem !important;
+    }
+}
+
+/* Layer 2: Illustration */
+.or-illustration-layer {
+    z-index: 2;
+    background-image: url('../../assets/door.png');
+    background-size: cover;
+    background-position: center;
+    
+    /* Illustration lighting interaction & Idle Breathing */
+    filter: brightness(var(--or-illustration-brightness));
+    transform: scale(var(--or-illustration-scale));
+    
+    /* Phase 4: Single high-performance mask for buttery smooth 60fps */
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--or-reveal-radius) * 1% - 15%), black calc(var(--or-reveal-radius) * 1%));
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    
+    mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--or-reveal-radius) * 1% - 15%), black calc(var(--or-reveal-radius) * 1%));
+    mask-size: 100% 100%;
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+/* Layer 3: Displacement Overlay (Fake Heat Distortion) */
+.or-displacement-layer {
+    z-index: 3;
+    background-image: url('../../assets/door.png');
+    background-size: cover;
+    background-position: center;
+    opacity: var(--or-distortion-opacity);
+    
+    /* Scale mismatch creates refraction/heat haze at the edge */
+    transform: scale(var(--or-distortion-scale));
+    filter: brightness(1.05);
+
+    /* Very soft ring mask only showing this layer near the advancing edge */
+    -webkit-mask-image: radial-gradient(
+        circle at 50% 50%,
+        transparent calc(var(--or-reveal-radius) * 1% - 15%),
+        black calc(var(--or-reveal-radius) * 1% - 10%),
+        transparent calc(var(--or-reveal-radius) * 1% - 5%)
+    );
+    mask-image: radial-gradient(
+        circle at 50% 50%,
+        transparent calc(var(--or-reveal-radius) * 1% - 15%),
+        black calc(var(--or-reveal-radius) * 1% - 10%),
+        transparent calc(var(--or-reveal-radius) * 1% - 5%)
+    );
+}
+
+/* Layer 4: Glow Layer */
+.or-glow-layer {
+    z-index: 4;
+    opacity: var(--or-glow-opacity);
+    mix-blend-mode: screen;
+    
+    /* Background is a dynamic ring that expands with the reveal */
+    background: radial-gradient(
+        circle at 50% 50%,
+        transparent calc(var(--or-reveal-radius) * 1% - 10%),
+        var(--energy-inner) calc(var(--or-reveal-radius) * 1% - 6%), /* Bloom behind edge */
+        var(--energy-highlight) calc(var(--or-reveal-radius) * 1% - 1%), /* Sharp edge highlight */
+        var(--energy-core) calc(var(--or-reveal-radius) * 1%), /* Core glow */
+        var(--energy-mid) calc(var(--or-reveal-radius) * 1% + 3%), /* Inner glow */
+        var(--energy-outer) calc(var(--or-reveal-radius) * 1% + 8%), /* Outer glow */
+        transparent calc(var(--or-reveal-radius) * 1% + 15%)
+    );
+
+    /* Use the noise texture to break up the perfect circle and make it jagged */
+    -webkit-mask-image: url('../../assets/textures/noise.png');
+    -webkit-mask-size: calc(256px * var(--or-noise-scale)) calc(256px * var(--or-noise-scale));
+    -webkit-mask-position: calc(var(--or-noise-offset-x)) calc(var(--or-noise-offset-y));
+    -webkit-mask-repeat: repeat;
+    
+    mask-image: url('../../assets/textures/noise.png');
+    mask-size: calc(256px * var(--or-noise-scale)) calc(256px * var(--or-noise-scale));
+    mask-position: calc(var(--or-noise-offset-x)) calc(var(--or-noise-offset-y));
+    mask-repeat: repeat;
+}

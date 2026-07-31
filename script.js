@@ -264,6 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // End of SVG Setup
+
 
 });
