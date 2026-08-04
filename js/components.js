@@ -181,7 +181,7 @@ function initGlobalPopup() {
                     <button class="popup-close-btn" aria-label="Close">&times;</button>
                     <p style="text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.75rem; color: #7f6e62; font-weight: 600; font-family: var(--font-sans, sans-serif); margin-bottom: 1.5rem;">Whenever You're Ready</p>
                     <h2 style="color: #423730; font-size: 3.2rem; margin-bottom: 1.5rem; font-style: italic; font-weight: 400; line-height: 1.2; font-family: var(--font-serif, serif);">
-                        Whenever you're ready — not a moment before.
+                        Whenever you're ready, not a moment before.
                     </h2>
                     <p style="color: #423730; font-size: 1.25rem; opacity: 0.85; font-family: var(--font-sans, sans-serif); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                         There's no wrong time to begin, and no pressure to decide today.
@@ -192,7 +192,7 @@ function initGlobalPopup() {
                         </a>
                     </div>
                     <p style="color: #423730; font-size: 1rem; opacity: 0.75; font-family: var(--font-sans, sans-serif); max-width: 500px; line-height: 1.5; margin: 0 auto;">
-                        Free 10-minute conversation before any session, so we can make sure this feels right for you.
+                        <strong>Free 10-minute</strong> conversation before any session, so we can make sure this feels right for you.
                     </p>
                 </div>
             `;

@@ -289,14 +289,14 @@ nav.scrolled {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
-  min-height: 800px;
+  min-height: 65vh;
   display: flex;
   align-items: center;
   position: relative;
   z-index: 2;
   overflow: hidden;
-  padding-top: 120px;
+  padding-top: 80px;
+  padding-bottom: 20px;
   box-sizing: border-box;
 }
 
@@ -4212,8 +4212,7 @@ nav.scrolled {
    FEELINGS SECTION
    ========================================= */
 .feelings-section {
-    padding: 10rem 0 !important;
-    min-height: 80vh;
+    padding: 4rem 0 !important;
     background: linear-gradient(to bottom, var(--color-light) 0%, var(--color-background) 15%, var(--color-background) 85%, var(--color-light) 100%) !important;
     overflow: hidden;
     position: relative;
@@ -4804,7 +4803,7 @@ nav.nav-hidden {
 
 /* --- FIX FEELINGS SECTION STYLES --- */
 .feelings-section {
-  padding: 4rem 0 !important;
+  padding: 1rem 0 4rem 0 !important;
 }
 .feelings-list li p {
   color: var(--color-primary) !important;
@@ -4876,7 +4875,7 @@ nav.nav-hidden {
 
 /* --- NEW SECTIONS CSS --- */
 .cosmic-healing-section {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background-color: var(--color-background); /* Dark indigo background to contrast the light sections */
 }
 .cosmic-healing-container {
