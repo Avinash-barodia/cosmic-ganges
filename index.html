@@ -14,9 +14,9 @@
         rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=7">
     <!-- Organic Reveal CSS -->
-    <link rel="stylesheet" href="js/OrganicReveal/styles.css">
+    <link rel="stylesheet" href="js/OrganicReveal/styles.css?v=2">
     <!-- Paths Grid CSS -->
     <link rel="stylesheet" href="css/paths-grid.css">
     <!-- JS Particles Canvas -->
@@ -72,66 +72,22 @@
         <div class="organic-reveal-container" id="organicReveal">
             <!-- Layer 1: Hidden Content -->
             <div class="or-layer or-content-layer">
-                <div class="feelings-card">
-                    <div class="feelings-header">
-                        <svg class="feelings-star" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)"
-                            stroke-width="1.5">
-                            <path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" stroke="none" fill="var(--color-accent)" />
-                        </svg>
-                        <h2>Maybe you've been <span>feeling...</span></h2>
-                        <div class="feelings-glow-divider"></div>
+                <div class="feelings-card new-feelings-style">
+                    <div class="feelings-header-new" style="text-align: center; margin-bottom: 3rem;">
+                        <span class="label-small text-center" style="display:block; margin-bottom:1rem; letter-spacing:3px; color: rgba(45, 27, 105, 0.4);">A GENTLE MIRROR</span>
+                        <h2 class="editorial-heading text-center" style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 2.8rem; color: #4a4559;">Maybe You've Been Feeling...</h2>
                     </div>
-                    <ul class="feelings-list">
-                        <li>
-                            <div class="feelings-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                                    <text x="14" y="8" font-size="6" stroke="none" fill="var(--color-accent)">z</text>
-                                    <text x="17" y="5" font-size="5" stroke="none" fill="var(--color-accent)">z</text>
-                                </svg>
-                            </div>
-                            <p>A quiet exhaustion that sleep doesn't fix.</p>
-                        </li>
-                        <li>
-                            <div class="feelings-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                            <p>Like you're doing everything right, yet nothing feels aligned.</p>
-                        </li>
-                        <li>
-                            <div class="feelings-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                                    <path
-                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <p>A relationship that keeps circling the same wound.</p>
-                        </li>
-                        <li>
-                            <div class="feelings-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                                </svg>
-                            </div>
-                            <p>A career that pays the bills but empties something else.</p>
-                        </li>
-                        <li>
-                            <div class="feelings-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                                    <path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" stroke="currentColor"
-                                        fill="none" />
-                                </svg>
-                            </div>
-                            <p>A pull toward something you can't quite name.</p>
-                        </li>
-                    </ul>
-                    <div class="feelings-footer">
-                        If even one of these felt familiar — you're not imagining it. And you're not the only one.
+                    <div class="feelings-pills-container">
+                        <div class="feeling-pill">"Why do I always have to be the one who understands everyone?"</div>
+                        <div class="feeling-pill">"Why am I always giving, but rarely receiving?"</div>
+                        <div class="feeling-pill">"Why does money come in… and disappear just as quickly?"</div>
+                        <div class="feeling-pill">"Why do I keep attracting people who take more than they give?"</div>
+                        <div class="feeling-pill">"Why do my relationships keep becoming emotionally exhausting?"</div>
+                        <div class="feeling-pill">"Why does success seem so easy for others, but so difficult for me?"</div>
+                        <div class="feeling-pill">"Why do I feel responsible for everyone’s happiness?"</div>
+                        <div class="feeling-pill">"Why do I keep starting over?"</div>
+                        <div class="feeling-pill">"Why does something always seem to go wrong just when life starts feeling better?"</div>
+                        <div class="feeling-pill">"Why can’t I seem to break the cycle?"</div>
                     </div>
                 </div>
             </div>
@@ -144,6 +100,25 @@
 
             <!-- Layer 4: Glow Layer -->
             <div class="or-layer or-glow-layer"></div>
+        </div>
+    </section>
+
+    <!-- Guidance Section -->
+    <section class="guidance-section" style="background-color: var(--color-light); padding: 5rem 2rem; text-align: center; color: var(--color-background);">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <h2 class="editorial-heading" style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; margin-bottom: 2.5rem; font-weight: 500; color: #4a4559; line-height: 1.3;">
+                You Don't Need to Know Which Healing Path Is Right.
+            </h2>
+            <p style="font-size: 1.15rem; margin-bottom: 1.5rem; line-height: 1.6; opacity: 0.85; color: #4a4559;">
+                That's okay. You don't need to understand every healing modality before you begin.
+            </p>
+            <p style="font-size: 1.15rem; margin-bottom: 3.5rem; line-height: 1.6; opacity: 0.85; color: #4a4559;">
+                Sometimes the first step isn't choosing a session. It's simply having a conversation about where you are.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="contact.html" class="btn guidance-btn-primary" style="display: inline-block;">Talk to Neelam</a>
+                <a href="services.html" class="btn guidance-btn-outline" style="display: inline-block;">Explore the Healing Paths</a>
+            </div>
         </div>
     </section>
 
@@ -214,9 +189,8 @@
     <section id="different-paths" class="different-paths-section">
         <div class="container paths-container">
             <div class="paths-intro animate-on-scroll">
-                <h2>Different paths. The same quiet homecoming.</h2>
-                <p>Each of these is simply a different way of listening — to your energy, your history, your body, or
-                    your breath.</p>
+                <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; margin-top: 0;">Ways to Begin</p>
+                <h2 style="font-weight: 700; font-size: 3.2rem;">Explore What Might Resonate</h2>
             </div>
 
             <div class="paths-grid animate-on-scroll delay-100">
