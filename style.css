@@ -5236,7 +5236,7 @@ nav.nav-hidden {
     padding: 0.8rem 1.4rem;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    color: #4a4559;
+    color: #000000;
     font-size: 0.95rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -5245,8 +5245,8 @@ nav.nav-hidden {
 }
 
 /* Shape the cloud layout using precise horizontal shifts */
-.feeling-pill:nth-child(1) { transform: translateX(20px); }
-.feeling-pill:nth-child(2) { transform: translateX(-20px); }
+.feeling-pill:nth-child(1) { transform: translateX(-15px); }
+.feeling-pill:nth-child(2) { transform: translateX(15px); }
 
 .feeling-pill:nth-child(3) { transform: translateX(-15px); }
 .feeling-pill:nth-child(4) { transform: translateX(15px); }
