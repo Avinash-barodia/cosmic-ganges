@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Details | Cosmic Ganges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Load main styles first so local styles override them -->
+<link rel="stylesheet" href="style.css?v=7">
+<style>
+:root{
+  --ivory:#FBF6EC; --cream:#F3E8D8; --moon:#FAF8F5;
+  --sage:#AEBBA1; --rose:#D9AEA4; --taupe:#B79C85;
+  --gold:#C9A65B; --champagne:#E9DCBB; --indigo:#ACA7D9;
+  --ink:#3B372E; --ink-soft:#6b6459;
+  --shadow:0 20px 60px rgba(80,65,45,0.08);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --c1: var(--indigo); --c2: var(--rose);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ivory); color:var(--ink); font-family:'Inter',sans-serif; font-size:17.5px; line-height:1.8; padding-top: 75px;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif; font-weight:400; letter-spacing:-0.01em; color:var(--ink);}
+.eyebrow{font-family:'Inter'; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--taupe); font-weight:500; display:inline-block; margin-bottom:16px;}
+a{color:inherit;}
+.wrap{max-width:820px; margin:0 auto; padding:0 8vw;}
+@media(min-width:900px){.wrap{padding:0 6vw;}}
+section{padding:90px 0;}
+.fade{animation:fadeIn .8s var(--ease);}
+@keyframes fadeIn{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);}}
+
+
+
+/* SWITCHER */
+.switcher{position:sticky; top:75px; z-index:50; background:var(--ivory); padding:16px 6vw 18px; border-bottom:1px solid rgba(60,50,40,.08); overflow-x:auto; white-space:nowrap;}
+.switcher-inner{display:inline-flex; gap:10px; margin:0 auto;}
+.tab{font-family:'Inter'; font-size:13.5px; padding:10px 18px; border-radius:30px; border:1px solid rgba(60,50,40,.15); background:var(--moon); cursor:pointer; transition:all .35s var(--ease); color:var(--ink-soft);}
+.tab:hover{border-color:var(--taupe);}
+.tab.active{background:var(--ink); color:var(--ivory); border-color:var(--ink);}
+
+/* HERO (per service) */
+.d-hero{padding-top:70px; text-align:center;}
+.d-hero .swatch{width:100%; max-width:640px; height:180px; margin:0 auto 40px; border-radius:22px; background:linear-gradient(135deg,var(--c1),var(--c2)); box-shadow:var(--shadow); position:relative; overflow:hidden;}
+.d-hero .swatch::after{content:''; position:absolute; inset:0; background:radial-gradient(circle at 70% 20%, rgba(255,255,255,.4), transparent 45%);}
+.d-hero h1{font-size:clamp(28px,4vw,42px); font-style:italic; line-height:1.3; max-width:16ch; margin:0 auto 22px;}
+.d-hero p{color:var(--ink-soft); max-width:56ch; margin:0 auto; font-size:18px;}
+
+/* numbered section blocks */
+.d-section{border-top:1px solid rgba(60,50,40,.08);}
+.d-num{font-family:'Fraunces'; font-style:italic; color:var(--gold); font-size:14px; display:block; margin-bottom:12px;}
+.d-section h2{font-size:clamp(22px,2.6vw,28px); margin-bottom:20px; line-height:1.35;}
+.d-section p{color:var(--ink-soft); margin-bottom:14px;}
+
+/* before/during/after */
+.bda-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:10px;}
+@media(max-width:700px){.bda-grid{grid-template-columns:1fr;}}
+.bda-card{background:var(--moon); border-radius:16px; padding:24px; box-shadow:var(--shadow);}
+.bda-card .lbl{font-family:'Fraunces'; font-style:italic; color:var(--gold); font-size:13.5px; display:block; margin-bottom:8px;}
+.bda-card p{font-size:14.5px; color:var(--ink-soft); margin:0;}
+
+/* expect list */
+.expect-list{list-style:none; margin-top:8px;}
+.expect-list li{padding:12px 0 12px 26px; border-bottom:1px solid rgba(60,50,40,.08); position:relative; color:var(--ink-soft); font-size:15.5px;}
+.expect-list li::before{content:'✧'; position:absolute; left:0; top:12px; color:var(--gold); font-size:13px;}
+
+/* resonate / not-for */
+.res-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:10px;}
+@media(max-width:700px){.res-grid{grid-template-columns:1fr;}}
+.res-card{padding:24px; border-radius:16px;}
+.res-card.yes{background:#F1F4EE; border:1px solid rgba(139,154,125,.25);}
+.res-card.no{background:#F6EFEA; border:1px solid rgba(183,156,133,.25);}
+.res-card .lbl{font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:500; color:var(--ink-soft); display:block; margin-bottom:12px;}
+.res-card ul{list-style:none;}
+.res-card li{padding:6px 0; font-size:14.5px; color:var(--ink-soft);}
+
+/* founder mini (shared, static) */
+.founder-mini{display:flex; gap:24px; align-items:center; background:var(--cream); border-radius:20px; padding:28px;}
+.founder-mini .fp{width:84px; height:84px; border-radius:50%; flex-shrink:0; background:linear-gradient(160deg,var(--sage),var(--taupe));}
+.founder-mini p{color:var(--ink-soft); font-size:15px; margin:0;}
+.founder-mini strong{color:var(--ink); font-family:'Fraunces'; font-style:italic; font-weight:400; font-size:16px; display:block; margin-bottom:6px;}
+
+/* faq */
+.faq-item{border-bottom:1px solid rgba(60,50,40,.12);}
+.faq-q{width:100%; text-align:left; background:none; border:none; padding:20px 0; font-family:'Fraunces'; font-size:17px; color:var(--ink); display:flex; justify-content:space-between; align-items:center; cursor:pointer;}
+.faq-q .plus{font-size:19px; color:var(--taupe); transition:transform .4s var(--ease);}
+.faq-item.open .plus{transform:rotate(45deg);}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .5s var(--ease);}
+.faq-a p{padding:0 0 20px; color:var(--ink-soft); font-size:15px;}
+
+/* cta */
+.d-cta{text-align:center; background:linear-gradient(160deg,var(--cream),var(--c2) 70%,var(--c1)); border-radius:28px; margin:0 6vw; padding:70px 8vw;}
+.d-cta h2{font-size:clamp(24px,3vw,32px); font-style:italic; margin-bottom:14px;}
+.d-cta p{color:var(--ink-soft); margin-bottom:28px;}
+.btn-primary{display:inline-block; padding:15px 32px; background:var(--ink); color:var(--ivory); text-decoration:none; border-radius:40px; font-size:14.5px; transition:transform .5s var(--ease), box-shadow .5s var(--ease);}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(60,45,20,.22);}
+.d-cta .final-line{margin-top:22px; font-family:'Fraunces'; font-style:italic; color:var(--ink-soft); font-size:14.5px;}
+
+footer{text-align:center; padding:60px 6vw 40px; color:var(--ink-soft); font-size:13.5px;}
+</style>
+</head>
+<body>
+
+    <!-- Component Placeholder: Navbar -->
+    <div id="navbar-placeholder"></div>
+
+<div class="switcher">
+  <div class="switcher-inner" id="tabRow"></div>
+</div>
+
+<main id="content" class="wrap"></main>
+
+    <!-- Component Placeholder: Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="script.js"></script>
+<script>
+const SERVICES = {
+  cosmic: {
+    name:"Cosmic Healing", category:"Inner Balance", c1:"var(--indigo)", c2:"var(--rose)",
+    headline:"When You Feel Out of Alignment With Yourself.",
+    recognition:"There are times you can't point to one particular problem. You simply feel unsettled, drained, or disconnected, like something is a little out of sync, even if life looks fine from the outside.",
+    whatIs:"Cosmic Healing is an energy-based practice that offers a space to slow down, become aware of what you're carrying, and gently reconnect with yourself. It doesn't diagnose or fix. It simply creates room for your own natural sense of balance to return.",
+    howSupports:"Many people turn to this practice during transitions, when patterns feel stuck, or when they simply want to feel more like themselves again. It can offer a quiet reset. Not a dramatic transformation, but a gentle return to center.",
+    before:"A short conversation about what's been present for you lately. No need to have the right words.",
+    during:"You rest comfortably while Neelam works with the flow of energy around you, following where it seems to ask for attention.",
+    after:"Space to sit quietly, share anything that surfaced, and simply notice how you feel before returning to your day.",
+    expect:["A calm, private setting, fully clothed throughout.","Sessions typically last 60 to 75 minutes.","No physical manipulation. The practice is subtle and largely energetic.","Some people feel warmth or tingling; others feel very little in the moment, and that's equally normal."],
+    resonate:["You feel generally \"off,\" without being able to name why.","You're going through a life transition and want grounding.","You're curious about energy work but not sure where to begin."],
+    notFor:["You're looking for a fast, dramatic fix. This is a gradual practice.","You'd prefer something more structured; Meditation may suit you better first."],
+    faq:[["Do I need to believe in energy for this to help?","No. Openness is enough. Belief isn't a requirement."],["Will I feel something during the session?","Maybe, maybe not. Both are normal. Some effects surface later, like better sleep that night."]]
+  },
+  reiki: {
+    name:"Reiki Healing", category:"Rest & Renewal", c1:"var(--rose)", c2:"var(--champagne)",
+    headline:"When Your Mind Has Been Carrying Too Much.",
+    recognition:"Sometimes the body is tired even when the day hasn't been particularly demanding. Sometimes you simply need permission to stop, to lie still, breathe, and let go for a while.",
+    whatIs:"Reiki is a gentle Japanese energy practice using light touch, or hands held just above the body, to support relaxation and a sense of balance. It's often described less as \"treatment\" and more as an invitation to rest deeply.",
+    howSupports:"For many, Reiki offers a rare experience: permission to do nothing at all. It can support relaxation, a quieter mind, and a felt sense of being cared for, without needing to talk, explain, or perform.",
+    before:"A brief chat about comfort, and anything you'd like Neelam to know.",
+    during:"You rest, fully clothed, on a comfortable surface, while Neelam works with the energy around your body through light touch or a few inches above it.",
+    after:"A few quiet minutes to reorient before slowly sitting up. Many people describe feeling unusually calm.",
+    expect:["Sessions typically last 45 to 60 minutes.","Soft lighting, quiet music, a warm and private room.","No pressure to talk during the session.","It's common to feel sleepy, warm, or simply very still."],
+    resonate:["You're craving stillness and permission to pause.","You hold tension that doesn't seem to release on its own.","You want a calming experience with no active participation required."],
+    notFor:["You'd prefer something conversation-based. Akashic Records may fit better.","Lying still for an hour doesn't appeal to you. Meditation offers a more active alternative."],
+    faq:[["Is Reiki a substitute for medical treatment?","No. It's a complementary relaxation practice, not a replacement for medical or psychological care."],["What should I wear?","Anything comfortable. You remain fully clothed throughout."]]
+  },
+  akashic: {
+    name:"Akashic Records", category:"Reflection & Insight", c1:"var(--indigo)", c2:"var(--sage)",
+    headline:"When You Keep Asking, \"Why Does This Keep Happening?\"",
+    recognition:"Certain patterns seem to follow us. In relationships, in choices, in the same emotional response arriving again and again. Sometimes we just want a different vantage point on why.",
+    whatIs:"For those who connect with this spiritual tradition, an Akashic Records reading is a guided, intuitive reflection on your life themes and recurring lessons. Approached as a spiritual practice, not a scientifically verified process.",
+    howSupports:"This reading can offer a fresh perspective on recurring patterns, current decisions, or a sense of purpose. A mirror for your own inner knowing, rather than a fixed prediction.",
+    before:"A conversation about what's currently on your mind or what you're hoping to understand.",
+    during:"Neelam enters a quiet, focused state to reflect on the themes you've brought, sharing insights as they arise.",
+    after:"Time to discuss what came up, ask questions, and decide for yourself what feels true or useful.",
+    expect:["Sessions typically last 60 minutes, online or in person.","A conversational, reflective format, not a scripted reading.","Insights are offered as perspective, not certainty or prediction.","You're encouraged to take only what resonates."],
+    resonate:["You're seeking perspective on repeating questions or relationships.","You're curious about purpose or direction, without needing hard answers.","You're comfortable with reflection rather than concrete instruction."],
+    notFor:["You'd prefer something more physical and less verbal. Reiki or Crystal Healing may feel more natural.","Your questions center on a specific recurring fear. Past Life Regression may go deeper."],
+    faq:[["Is this the same as fortune telling?","No. It's offered as reflection and perspective, not prediction of specific future events."],["What if nothing resonates?","That's alright. You're always free to take only what feels true and leave the rest."]]
+  },
+  plr: {
+    name:"Past Life Regression", category:"Deeper Exploration", c1:"var(--indigo)", c2:"var(--taupe)",
+    headline:"When a Pattern Feels Older Than the Moment You're In.",
+    recognition:"Some fears, connections, or emotional responses don't seem to have an origin in this lifetime. A face that feels instantly familiar. A fear with no clear cause. A pull you can't quite explain.",
+    whatIs:"Past Life Regression is a guided, experiential practice using deep relaxation to explore whatever surfaces. Offered as a spiritual and reflective practice, not a scientifically verified account of past events.",
+    howSupports:"Many people find that the process itself. Regardless of what surfaces. Brings a sense of clarity, release, or simply satisfied curiosity. It's less about proving something happened, and more about what the experience reveals about you now.",
+    before:"A longer conversation about the pattern or curiosity that's bringing you here.",
+    during:"In a relaxed, guided state, not theatrical hypnosis but simple deep stillness, you're invited to notice whatever arises, while remaining aware throughout.",
+    after:"Time to talk through the experience and what it might mean for you.",
+    expect:["Sessions typically last 90 to 120 minutes.","You remain conscious and in control throughout. Nothing is done \"to\" you.","Some sessions bring vivid experiences; others bring only stillness, and that's equally valid.","No obligation to interpret or believe anything in a particular way."],
+    resonate:["You're curious about a deeper story beneath a recurring fear or pattern.","You're comfortable with an exploratory process without guaranteed answers.","You've tried other approaches and want a different lens."],
+    notFor:["You'd prefer something gentler and shorter to start. Cosmic Healing or Meditation is a better entry point.","You're currently in an acute mental health crisis. Please speak with a qualified professional first."],
+    faq:[["Will I definitely \"see\" a past life?","Not necessarily. Everyone's experience is different, and stillness or imagery are both common."],["Is this safe for anxiety-prone people?","Please talk to Neelam beforehand. She can help you decide if this is the right time. This practice doesn't replace mental health care."]]
+  },
+  crystal: {
+    name:"Crystal Alignment", category:"Intention & Ritual", c1:"var(--sage)", c2:"var(--champagne)",
+    headline:"Sometimes Healing Begins With Creating Space.",
+    recognition:"Not every moment calls for a deep conversation. Sometimes what helps most is something to hold, something tactile, something that gives your intention a physical form.",
+    whatIs:"Crystal Alignment is a reflective, intentional practice using natural stones as a focus point for mindfulness, not presented as a medical treatment but as a sensory ritual that many find grounding.",
+    howSupports:"Working with crystals can offer a simple, physical anchor for intention-setting, quiet reflection, or a grounding pause in an otherwise overwhelming day.",
+    before:"A short conversation about what you're hoping to feel more of: calm, clarity, or focus.",
+    during:"Stones are placed or held with intention, often alongside quiet breathing or light guidance from Neelam.",
+    after:"A few minutes of stillness, and a chance to take a stone home as a physical reminder of the session.",
+    expect:["Sessions typically last 45 minutes.","A tactile, sensory experience, close up and hands on.","Can be combined with other practices like Reiki or meditation.","No claims of curing any medical condition. This is a mindfulness and ritual practice."],
+    resonate:["You're drawn to grounding, tactile rituals.","You want something gentle and sensory rather than deeply verbal.","You're looking for a simple entry point into intentional practice."],
+    notFor:["You'd prefer something more guided and less self-directed. Reiki may suit you better."],
+    faq:[["Do crystals have proven medical benefits?","No scientific evidence supports medical claims for crystals. This is offered as a mindfulness and ritual practice, not medical treatment."],["Can I keep the crystal?","Often yes. Details are shared at booking."]]
+  },
+  oils: {
+    name:"Magic Oils", category:"Sensory Ritual", c1:"var(--gold)", c2:"var(--rose)",
+    headline:"Small Rituals Can Change the Way a Moment Feels.",
+    recognition:"A scent before sleep. A few drops before a hard conversation. Small, repeatable rituals can quietly shift how a moment feels, without needing to be complicated.",
+    whatIs:"Magic Oils are intentionally blended botanical oils, designed to support small personal rituals. A sensory element of self-care rather than a medical remedy.",
+    howSupports:"Used mindfully, a signature scent or ritual can become an anchor. A way of marking a transition, a moment of pause, or an intention you're setting for yourself.",
+    before:"A short conversation about what kind of moments you'd like to support. Grounding, calm, clarity, confidence.",
+    during:"Neelam guides you through selecting and using an oil blend suited to your intention.",
+    after:"You leave with your blend and a simple ritual to build into your routine.",
+    expect:["A short, guided experience, typically 30 minutes.","Available as a standalone offering or alongside another session.","No unsupported health claims. Oils are offered for sensory and ritual use only."],
+    resonate:["You want a gentle, ongoing daily ritual to return to.","You're drawn to scent and sensory experience as a form of self-care."],
+    notFor:["You're looking for something deeper or more reflective. Pair this with Meditation or Cosmic Healing instead."],
+    faq:[["Are these oils a medical treatment?","No. They're intended for sensory ritual and self-care use only."],["Any allergy concerns?","Please let Neelam know about sensitivities beforehand so a blend can be chosen with care."]]
+  },
+  meditation: {
+    name:"Meditation", category:"Stillness", c1:"var(--sage)", c2:"var(--indigo)",
+    headline:"When You Need a Little More Quiet Within.",
+    recognition:"You don't need to know how to meditate. You don't need to empty your mind. You simply need a few moments where you can stop running from one thought to the next.",
+    whatIs:"A guided meditation practice, gently paced for complete beginners as much as for those with experience, an invitation to sit with yourself rather than a performance to get \"right.\"",
+    howSupports:"Regular practice, even in small doses, can support a quieter mind, better sleep, and a steadier relationship with difficult emotions over time.",
+    before:"A short conversation about what's been keeping your mind busy lately.",
+    during:"A gentle, guided practice: breath awareness, body awareness, or simple stillness, paced to your comfort.",
+    after:"A few minutes to reflect, and simple guidance for continuing on your own.",
+    expect:["Sessions typically last 30 to 45 minutes.","No prior experience required.","Available one-on-one or in small group settings.","It's normal for your mind to wander. That's part of the practice, not a failure of it."],
+    resonate:["You're completely new to any of this.","You want a low-pressure, accessible starting point.","You're looking for a practice you can eventually do on your own."],
+    notFor:["You're craving something more hands-on or energetic. Reiki or Crystal Healing may feel more immediately tangible."],
+    faq:[["What if I can't stop thinking?","That's completely normal. Meditation isn't about stopping thoughts, it's about changing your relationship to them."],["Can I do this instead of therapy?","Meditation can be a helpful complement, but it isn't a replacement for professional mental health care."]]
+  },
+  sound: {
+    name:"Sound Healing", category:"Vibrational Reset", c1:"#a8c0c8", c2:"#b6d0c6",
+    headline:"[Placeholder Headline for Sound Healing]",
+    recognition:"[Placeholder recognition text...]",
+    whatIs:"[Placeholder explanation...]",
+    howSupports:"[Placeholder how it supports...]",
+    before:"[Placeholder before session...]",
+    during:"[Placeholder during session...]",
+    after:"[Placeholder after session...]",
+    expect:["[Expectation 1]","[Expectation 2]"],
+    resonate:["[Resonate 1]","[Resonate 2]"],
+    notFor:["[Not for 1]"],
+    faq:[["[FAQ Q1]","[FAQ A1]"]]
+  },
+  innerchild: {
+    name:"Inner Child Healing", category:"Deep Nurturing", c1:"#f0d8c8", c2:"#d8b8a8",
+    headline:"[Placeholder Headline for Inner Child Healing]",
+    recognition:"[Placeholder recognition text...]",
+    whatIs:"[Placeholder explanation...]",
+    howSupports:"[Placeholder how it supports...]",
+    before:"[Placeholder before session...]",
+    during:"[Placeholder during session...]",
+    after:"[Placeholder after session...]",
+    expect:["[Expectation 1]","[Expectation 2]"],
+    resonate:["[Resonate 1]","[Resonate 2]"],
+    notFor:["[Not for 1]"],
+    faq:[["[FAQ Q1]","[FAQ A1]"]]
+  },
+  numerology: {
+    name:"Numerology", category:"Life Path Insight", c1:"#d9c2b3", c2:"#c3b2a5",
+    headline:"[Placeholder Headline for Numerology]",
+    recognition:"[Placeholder recognition text...]",
+    whatIs:"[Placeholder explanation...]",
+    howSupports:"[Placeholder how it supports...]",
+    before:"[Placeholder before session...]",
+    during:"[Placeholder during session...]",
+    after:"[Placeholder after session...]",
+    expect:["[Expectation 1]","[Expectation 2]"],
+    resonate:["[Resonate 1]","[Resonate 2]"],
+    notFor:["[Not for 1]"],
+    faq:[["[FAQ Q1]","[FAQ A1]"]]
+  },
+  mojo: {
+    name:"Mojo Pouch Bag", category:"Personalized Intentions", c1:"#b29598", c2:"#c6b5b7",
+    headline:"[Placeholder Headline for Mojo Pouch Bag]",
+    recognition:"[Placeholder recognition text...]",
+    whatIs:"[Placeholder explanation...]",
+    howSupports:"[Placeholder how it supports...]",
+    before:"[Placeholder before session...]",
+    during:"[Placeholder during session...]",
+    after:"[Placeholder after session...]",
+    expect:["[Expectation 1]","[Expectation 2]"],
+    resonate:["[Resonate 1]","[Resonate 2]"],
+    notFor:["[Not for 1]"],
+    faq:[["[FAQ Q1]","[FAQ A1]"]]
+  },
+  mediumship: {
+    name:"Mediumship", category:"Spiritual Connection", c1:"#9f9ea7", c2:"#b2b2b8",
+    headline:"[Placeholder Headline for Mediumship]",
+    recognition:"[Placeholder recognition text...]",
+    whatIs:"[Placeholder explanation...]",
+    howSupports:"[Placeholder how it supports...]",
+    before:"[Placeholder before session...]",
+    during:"[Placeholder during session...]",
+    after:"[Placeholder after session...]",
+    expect:["[Expectation 1]","[Expectation 2]"],
+    resonate:["[Resonate 1]","[Resonate 2]"],
+    notFor:["[Not for 1]"],
+    faq:[["[FAQ Q1]","[FAQ A1]"]]
+  },
+  crystalreading: {
+    name:"Crystal Reading", category:"Clarity & Vision", c1:"#c2d9df", c2:"#b5c3ca",
+    headline:"[Placeholder Headline for Crystal Reading]",
+    recognition:"[Placeholder recognition text...]",
+    whatIs:"[Placeholder explanation...]",
+    howSupports:"[Placeholder how it supports...]",
+    before:"[Placeholder before session...]",
+    during:"[Placeholder during session...]",
+    after:"[Placeholder after session...]",
+    expect:["[Expectation 1]","[Expectation 2]"],
+    resonate:["[Resonate 1]","[Resonate 2]"],
+    notFor:["[Not for 1]"],
+    faq:[["[FAQ Q1]","[FAQ A1]"]]
+  }
+};
+
+const tabRow = document.getElementById('tabRow');
+const content = document.getElementById('content');
+
+Object.keys(SERVICES).forEach(key=>{
+  const btn = document.createElement('button');
+  btn.className = 'tab';
+  btn.textContent = SERVICES[key].name;
+  btn.dataset.key = key;
+  btn.addEventListener('click', ()=>render(key));
+  tabRow.appendChild(btn);
+});
+
+function render(key){
+  const s = SERVICES[key];
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.key===key));
+  document.documentElement.style.setProperty('--c1', s.c1);
+  document.documentElement.style.setProperty('--c2', s.c2);
+
+  content.innerHTML = `
+    <section class="d-hero fade">
+      <span class="eyebrow">${s.category}</span>
+      <div class="swatch"></div>
+      <h1>${s.headline}</h1>
+      <p>${s.recognition}</p>
+    </section>
+
+    <section class="d-section fade">
+      <span class="d-num">01. What This Experience Is</span>
+      <h2>${s.name}, Simply Explained</h2>
+      <p>${s.whatIs}</p>
+    </section>
+
+    <section class="d-section fade">
+      <span class="d-num">02. How It May Support Your Journey</span>
+      <h2>Why People Return to This</h2>
+      <p>${s.howSupports}</p>
+    </section>
+
+    <section class="d-section fade">
+      <span class="d-num">03. What a Session Feels Like</span>
+      <h2>Before, During, After</h2>
+      <div class="bda-grid">
+        <div class="bda-card"><span class="lbl">Before</span><p>${s.before}</p></div>
+        <div class="bda-card"><span class="lbl">During</span><p>${s.during}</p></div>
+        <div class="bda-card"><span class="lbl">After</span><p>${s.after}</p></div>
+      </div>
+    </section>
+
+    <section class="d-section fade">
+      <span class="d-num">04. What You Can Expect</span>
+      <h2>Practical Details</h2>
+      <ul class="expect-list">${s.expect.map(e=>`<li>${e}</li>`).join('')}</ul>
+    </section>
+
+    <section class="d-section fade">
+      <span class="d-num">05. Who This May Be For</span>
+      <h2>Is This the Right Path Right Now?</h2>
+      <div class="res-grid">
+        <div class="res-card yes"><span class="lbl">This may resonate if…</span><ul>${s.resonate.map(r=>`<li>${r}</li>`).join('')}</ul></div>
+        <div class="res-card no"><span class="lbl">You may prefer another path if…</span><ul>${s.notFor.map(r=>`<li>${r}</li>`).join('')}</ul></div>
+      </div>
+    </section>
+
+    <section class="d-section fade">
+      <span class="d-num">06. Meet Neelam</span>
+      <div class="founder-mini">
+        <div class="fp"></div>
+        <p><strong>A guide who listens.</strong>Neelam's approach is gentle, intuitive and deeply personal. Creating space for you to slow down and reconnect with your own inner wisdom, at your own pace.</p>
+      </div>
+    </section>
+
+    <section class="d-section fade">
+      <span class="d-num">07. Frequently Asked Questions</span>
+      <h2>About ${s.name}</h2>
+      <div class="faq-list">
+        ${s.faq.map(([q,a])=>`
+          <div class="faq-item">
+            <button class="faq-q">${q}<span class="plus">+</span></button>
+            <div class="faq-a"><p>${a}</p></div>
+          </div>`).join('')}
+      </div>
+    </section>
+
+    <section>
+      <div class="d-cta fade">
+        <span class="eyebrow">Whenever You're Ready</span>
+        <h2>Explore ${s.name} With Neelam</h2>
+        <p>There's no wrong time to begin, and no pressure to decide today.</p>
+        <a href="#" class="btn-primary">Reserve Your Healing Space</a>
+        <p class="final-line">Come as you are.</p>
+      </div>
+    </section>
+  `;
+
+  content.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      content.querySelectorAll('.faq-item.open').forEach(o=>{
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// Check if there is a hash in the URL and if it matches a service key
+const initialTab = window.location.hash.replace('#', '');
+if (initialTab && SERVICES[initialTab]) {
+  render(initialTab);
+} else {
+  render('cosmic');
+}
+</script>
+
+</body>
+</html>
