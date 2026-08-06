@@ -3761,17 +3761,17 @@ nav.scrolled {
 }
 
 .large-cosmic-quote {
-  font-family: var(--font-hero);
-  font-size: 3rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 2.5rem;
   line-height: 1.4;
   color: var(--color-light);
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 }
 
 .highlight-gold {
   color: var(--color-accent);
-  font-style: italic;
 }
 
 .philosophy-cards-grid {
