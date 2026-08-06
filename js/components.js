@@ -15,7 +15,7 @@ function initComponents() {
     // Inject Footer
     const footerPlaceholder = document.getElementById("footer-placeholder");
     if (footerPlaceholder) {
-        fetch("components/footer.html")
+        fetch("components/footer.html?v=2")
             .then(response => response.text())
             .then(data => {
                 footerPlaceholder.innerHTML = data;

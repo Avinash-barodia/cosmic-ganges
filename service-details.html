@@ -100,6 +100,12 @@ section{padding:40px 0;}
 .d-cta .final-line{margin-top:22px; font-family:'Fraunces'; font-style:italic; color:var(--ink-soft); font-size:14.5px;}
 
 footer{text-align:center; padding:60px 6vw 40px; color:var(--ink-soft); font-size:13.5px;}
+
+@media(max-width:600px){
+  .d-cta { margin: 0; padding: 40px 6vw; border-radius: 20px; }
+  .d-cta h2 { font-size: 24px; }
+  .btn-primary { padding: 12px 24px; }
+}
 </style>
 </head>
 <body>
@@ -116,7 +122,7 @@ footer{text-align:center; padding:60px 6vw 40px; color:var(--ink-soft); font-siz
     <!-- Component Placeholder: Footer -->
     <div id="footer-placeholder"></div>
 
-    <script src="js/components.js"></script>
+    <script src="js/components.js?v=3"></script>
     <script src="script.js"></script>
 <script>
 const SERVICES = {
@@ -392,7 +398,7 @@ function render(key){
         <span class="eyebrow">Whenever You're Ready</span>
         <h2>Explore ${s.name} With Neelam</h2>
         <p>There's no wrong time to begin, and no pressure to decide today.</p>
-        <a href="#" class="btn-primary">Reserve Your Healing Space</a>
+        <a href="https://wa.me/919823183363?text=Hi%20Neelam%2C%20I%20would%20like%20to%20reserve%20my%20healing%20space." target="_blank" class="btn-primary">Reserve Your Healing Space</a>
         <p class="final-line">Come as you are.</p>
       </div>
     </section>

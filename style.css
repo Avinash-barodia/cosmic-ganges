@@ -2495,6 +2495,9 @@ nav.scrolled {
 }
 
 @media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
   .library-newsletter-form {
     flex-direction: column;
   }
@@ -3441,7 +3444,7 @@ nav.scrolled {
 .about-hero-portrait {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 580px;
   aspect-ratio: 3/4;
   margin-left: auto;
   border-radius: 28px;
@@ -3810,48 +3813,154 @@ nav.scrolled {
 }
 
 .split-glass-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  display: none; /* fallback */
 }
 
-.glass-col {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 28px;
-  padding: 4rem;
-  transition: transform 0.4s ease;
+/* --- SECTION 6: YIN-YANG ORBS --- */
+.yin-yang-orbs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  position: relative;
+  padding: 4rem 0;
 }
 
-.glass-col:hover {
-  transform: translateY(-8px);
+.orb-connection-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 80%;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.4), transparent);
 }
 
-.glass-col h3 {
+.orb {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.yin-orb {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: floatOrbYin 6s ease-in-out infinite alternate;
+  box-shadow: 0 20px 50px rgba(201,168,76,0.05), inset 0 0 40px rgba(201,168,76,0.05);
+}
+
+.yang-orb {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: floatOrbYang 7s ease-in-out infinite alternate-reverse;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), inset 0 0 40px rgba(0,0,0,0.4);
+}
+
+@keyframes floatOrbYin {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes floatOrbYang {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(15px) rotate(-1deg); }
+}
+
+.orb-content {
+  z-index: 2;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.orb h3 {
   font-family: var(--font-heading);
   font-size: 2rem;
   color: var(--color-light);
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
-.luxury-list-check, .luxury-list-cross {
+.orb-list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.luxury-list-check li, .luxury-list-cross li {
+.orb-list li {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  font-size: 1.2rem;
+  gap: 1rem;
+  font-size: 1.15rem;
   color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(.22,.61,.36,1);
+  cursor: default;
 }
 
-.luxury-list-check li span { color: var(--color-accent); font-size: 1.5rem; }
-.luxury-list-cross li span { color: var(--color-highlight); font-size: 1.2rem; }
+.is-list li span { color: var(--color-accent); font-size: 1.1rem; }
+.is-not-list li span { color: rgba(255,255,255,0.2); font-size: 0.9rem; font-family: sans-serif;}
+
+/* Hover Effects */
+.orb-list li:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Cross-Orb Interactions using :has() */
+.yin-yang-orbs-container:has(.yin-orb li[data-pair="1"]:hover) .yang-orb li[data-pair="1"],
+.yin-yang-orbs-container:has(.yin-orb li[data-pair="2"]:hover) .yang-orb li[data-pair="2"],
+.yin-yang-orbs-container:has(.yin-orb li[data-pair="3"]:hover) .yang-orb li[data-pair="3"],
+.yin-yang-orbs-container:has(.yin-orb li[data-pair="4"]:hover) .yang-orb li[data-pair="4"] {
+  opacity: 0.2;
+  text-decoration: line-through;
+  transform: scale(0.95);
+}
+
+.yin-yang-orbs-container:has(.yang-orb li[data-pair="1"]:hover) .yin-orb li[data-pair="1"],
+.yin-yang-orbs-container:has(.yang-orb li[data-pair="2"]:hover) .yin-orb li[data-pair="2"],
+.yin-yang-orbs-container:has(.yang-orb li[data-pair="3"]:hover) .yin-orb li[data-pair="3"],
+.yin-yang-orbs-container:has(.yang-orb li[data-pair="4"]:hover) .yin-orb li[data-pair="4"] {
+  background: rgba(201,168,76,0.15);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(201,168,76,0.1);
+}
+
+@media (max-width: 1024px) {
+  .yin-yang-orbs-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .orb-connection-line {
+    display: none;
+  }
+  .orb {
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+  }
+}
 
 /* --- SECTION 7: MISSION & VISION --- */
 .mission-vision-section {
@@ -5235,10 +5344,9 @@ nav.nav-hidden {
     border: 1px solid rgba(0,0,0,0.06);
     border-radius: 50px;
     padding: 0.8rem 1.4rem;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
     color: #000000;
     font-size: 0.95rem;
+    line-height: 1.4;
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
